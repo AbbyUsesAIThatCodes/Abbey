@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Abbey · Candlelight art studies</title>
+  <style>
+:root{color-scheme:light;--paper:#f7f4e9;--ink:#283e33;--muted:#677365;--line:#dcded1;--green:#345d49;--gold:#b88a3b;--cream:#fffcf3;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink)}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,select,input[type=checkbox],input[type=range]{cursor:pointer}button{color:inherit}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #b77825;outline-offset:4px}button{transition:background .15s,color .15s}button:hover{filter:brightness(.96)}.masthead{display:flex;align-items:center;gap:28px;padding:24px 4vw 20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:14px}.brand-mark{font-size:54px;line-height:1;color:var(--gold)}h1{font-size:42px;letter-spacing:-2px;line-height:1;margin:0}.brand p{font-size:12px;margin:7px 0 0;color:var(--muted);font-family:system-ui,sans-serif}.edition{margin-left:auto;text-align:right}.edition span{font:600 11px system-ui,sans-serif;letter-spacing:3px;color:#927036}.edition p{font:12px system-ui,sans-serif;color:var(--muted);margin:7px 0 0}main{max-width:1760px;margin:0 auto;padding:30px 4vw 0}.study-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:24px}.eyebrow{font:600 10px system-ui,sans-serif;letter-spacing:2px;color:#7b784f}h2{font-size:31px;font-weight:400;letter-spacing:-.65px;margin:9px 0 0}.study-heading>p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 18px}.style-choice{display:flex;align-items:center;gap:15px;text-align:left;padding:16px 18px;background:#eeeee2;border:1px solid transparent;border-radius:8px;min-width:0}.style-choice.active{background:#fffdf5;border-color:#a9b59c;box-shadow:0 3px 8px #52632b0a}.style-number{font-size:24px;color:#969c7b}.style-choice strong{font-size:17px;font-weight:400;display:block}.style-choice small{font:11px system-ui,sans-serif;color:var(--muted);display:block;margin-top:5px}.swatches{display:flex;margin-left:auto;flex-shrink:0}.swatches i{display:block;width:14px;height:24px;border-radius:10px;margin-left:3px;background:#678c55}.swatches.orchard i:nth-child(2){background:#d5bb89}.swatches.orchard i:nth-child(3){background:#ae6344}.swatches.manuscript i{background:#2e6768}.swatches.manuscript i:nth-child(2){background:#c89e3c}.swatches.manuscript i:nth-child(3){background:#974d63}.swatches.storybook i{background:#86a983}.swatches.storybook i:nth-child(2){background:#e5c7a2}.swatches.storybook i:nth-child(3){background:#ab8598}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 262px;gap:20px;align-items:start}.world-panel{border:1px solid #d1d8c4;background:#e1e8ce;border-radius:10px;overflow:hidden;min-width:0}.world-toolbar{height:43px;display:flex;align-items:center;gap:20px;padding:0 18px;background:#f5f6e9;font:11px system-ui,sans-serif;border-bottom:1px solid #d1d8c4}.world-toolbar #scene-caption{font-weight:600;letter-spacing:.4px}.world-toolbar #routine-caption{color:var(--muted);margin-left:auto}.button{border:1px solid #bdc6b4;border-radius:5px;background:#fffdf4;padding:10px 16px;font:12px system-ui,sans-serif;white-space:nowrap}.button.primary{background:var(--green);color:#fffdf3;border-color:var(--green)}.button.small{font-size:11px;padding:6px 10px}.button.wide{width:100%}.button[aria-pressed=true]{background:var(--green);color:var(--cream)}.scenes{display:grid;grid-template-columns:1fr;position:relative;overflow:hidden;background:#d9e2c4}.scene-slot{position:relative;min-width:0;overflow:hidden;aspect-ratio:1280/850}.scene-slot[hidden]{display:none}.scene-slot svg{width:100%;height:100%;display:block;touch-action:none;user-select:none;cursor:grab}.scene-slot svg:active{cursor:grabbing}.scene-label{display:none;position:absolute;left:12px;top:12px;padding:6px 10px;background:#fffff0dd;border-radius:4px;color:#304838;font:11px system-ui,sans-serif;pointer-events:none}.world-footer{display:flex;align-items:center;gap:16px;justify-content:space-between;background:#eff1e1;padding:9px 16px;font:10px system-ui,sans-serif;color:#626f5f}.zoom-controls{display:flex;gap:5px;align-items:center;white-space:nowrap}.zoom-controls button{background:transparent;border:1px solid #c3ccbb;border-radius:3px;min-width:26px;min-height:26px;font:12px system-ui,sans-serif}.zoom-controls output{min-width:40px;text-align:center}.controls{background:#fbf9f0;border:1px solid var(--line);border-radius:8px;padding:0 18px}.control-section{padding:17px 0;border-bottom:1px solid var(--line)}.control-section:last-child{border:0}.control-section h3,.section-label{display:block;font-size:16px;font-weight:400;margin:0 0 13px}.label-row{display:flex;justify-content:space-between;align-items:center;gap:10px;font:11px system-ui,sans-serif;margin-bottom:9px}.label-row output{color:#697457;text-align:right}.control-section input[type=range]{width:100%;accent-color:#56774b;margin:3px 0 8px;height:14px}.segmented{display:flex;border:1px solid #ced3c1;border-radius:4px;overflow:hidden;margin:4px 0 12px}.segmented button{flex:1;padding:6px 2px;border:0;background:transparent;font:10px system-ui,sans-serif}.segmented button+button{border-left:1px solid #ced3c1}.segmented button.active{background:#dce5ce}.check{display:flex;gap:8px;align-items:center;font:11px system-ui,sans-serif;color:#56664d;line-height:1.5;margin-top:9px}.check input{accent-color:#486c42;width:14px;height:14px;margin:0;flex-shrink:0}select{max-width:100%;border:1px solid #cbd3bf;border-radius:4px;padding:8px;background:#fffdf4;color:#364e3a;font:12px system-ui,sans-serif}.control-section>select{width:100%}.label-row select{font-size:11px;padding:5px 8px}.range-labels{display:flex;justify-content:space-between;font:10px system-ui,sans-serif;color:#7b826e}.control-hint{font:11px/1.6 system-ui,sans-serif;color:#78806c;margin:10px 0 14px}.below-world{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:22px;margin-top:23px}.person-card{display:flex;gap:16px;padding:2px 22px 0 0;border-right:1px solid var(--line);min-width:0}.portrait{width:84px;height:100px;background:#e6e9d7;border-radius:50% 50% 42% 42%;flex-shrink:0;overflow:hidden}.portrait svg{width:100%;height:100%}.person-info{flex:1;min-width:0}.person-info .label-row{flex-wrap:wrap;gap:6px;margin-bottom:3px}.person-info select{font-size:10px;padding:3px;max-width:135px}.below-world h3{font-size:21px;font-weight:400;margin:8px 0}.below-world p{font:12px/1.7 system-ui,sans-serif;color:#67735e;margin:6px 0}.person-info .person-thought{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#4f654a}.story-card{border-right:1px solid var(--line);padding-right:22px}.text-button{background:transparent;border:0;border-bottom:1px solid #a6b196;padding:3px 0;color:#496347;font:12px system-ui,sans-serif;text-align:left}.review-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px}.page-footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);margin-top:25px;padding:18px 0;font:10px/1.6 system-ui,sans-serif;color:#848977}.page-footer span:first-child{white-space:nowrap}details{margin-top:12px;font:11px/1.6 system-ui,sans-serif;color:#6c765f}summary{cursor:pointer}details p{font-size:11px!important}body.comparing .workspace{grid-template-columns:1fr}body.comparing .scenes{grid-template-columns:repeat(3,1fr)}body.comparing .scene-label{display:block}body.comparing .scene-slot{border-right:1px solid #c9d1b9}body.comparing .controls{display:grid;grid-template-columns:repeat(4,1fr);padding:0 18px;gap:20px}body.comparing .control-section{border-bottom:0}body.comparing .world-footer>span{max-width:none}dialog{border:1px solid #a6b395;border-radius:12px;padding:0;background:#fffaf0;color:var(--ink);max-width:min(610px,calc(100vw - 28px));max-height:90vh;overflow:auto;box-shadow:0 24px 80px #102a2344}dialog::backdrop{background:#183c2dcc;backdrop-filter:blur(3px)}.dialog-close{position:absolute;right:13px;top:13px;border:1px solid #fff7de;background:#fffae9ed;border-radius:50%;width:34px;height:34px;font:24px Georgia;z-index:1}.event-copy{padding:23px 30px 25px}.event-copy h2{font-size:32px;margin:8px 0 16px}.event-copy p{font-size:15px;line-height:1.65;color:#58664d}.event-copy blockquote{margin:15px 0;font-style:italic;line-height:1.6}.event-copy .event-note{font:11px/1.5 system-ui,sans-serif;color:#8a8877}#event-art{background:#d4dec4;line-height:0}#event-art svg{width:100%;height:auto}#event-choices{display:grid;gap:8px;margin-top:20px}#event-choices button{text-align:left;background:#f1f2e2;border:1px solid #cdd5bd;border-radius:5px;padding:12px;font-size:15px}#event-choices button small{display:block;font:11px/1.5 system-ui,sans-serif;color:#6e7963;margin-top:5px}#event-response{margin-bottom:0;font-style:italic}#notice{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);border-radius:6px;background:#284b3c;color:#fff8e8;padding:12px 18px;font:12px system-ui,sans-serif;box-shadow:0 4px 15px #16322233;pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;max-width:90vw}#notice.show{opacity:1}
+@media(min-width:1500px){.scene-slot{aspect-ratio:1280/760}.scene-slot svg{object-fit:cover}.workspace{grid-template-columns:minmax(0,1fr) 280px}.control-section{padding:20px 0}.controls{padding:0 22px}}
+@media(max-width:1050px){.swatches{display:none}.workspace{grid-template-columns:minmax(0,1fr) 238px;gap:13px}.style-choice{padding:13px;gap:10px}.style-choice strong{font-size:15px}.below-world{grid-template-columns:1.4fr 1fr}.review-card{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px}.review-card>p{max-width:700px}.person-card{padding-right:16px}.story-card{border:0}.world-footer>span{max-width:190px;line-height:1.5}.study-heading>p{font-size:12px}body.comparing .scenes{grid-template-columns:1fr}body.comparing .scene-slot{aspect-ratio:1280/730}body.comparing .controls{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){main{padding:22px 16px 0}.masthead{padding:18px 16px;gap:12px;flex-wrap:wrap}.brand-mark{font-size:44px}h1{font-size:34px}.brand p{font-size:10px}.edition{margin-left:auto}.edition span{font-size:9px}.edition p{font-size:10px}.masthead>.button{margin-left:auto}.study-heading{display:block}.study-heading>p{margin-top:12px}.study-heading h2{font-size:27px}.styles{gap:6px}.style-choice{display:block;padding:10px}.style-number{font-size:17px;display:block;margin-bottom:5px}.style-choice strong{font-size:14px}.style-choice small{font-size:9px;line-height:1.5}.workspace{grid-template-columns:1fr}.controls{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.control-section:nth-child(3){border-bottom:0}.below-world{grid-template-columns:1fr;gap:20px}.person-card{border:0;padding-right:0}.story-card{border-top:1px solid var(--line);padding-top:18px}.review-card{grid-column:auto}.world-toolbar{gap:8px;padding:0 10px;font-size:10px}.world-toolbar #routine-caption{max-width:160px;text-align:right}.world-footer{padding:8px 10px;gap:8px}.world-footer>span{font-size:9px;max-width:170px}.page-footer{flex-direction:column;gap:5px}.event-copy{padding:20px}.scene-slot{aspect-ratio:1280/1000}.scene-slot svg{width:100%;height:100%}}
+@media(max-width:400px){.controls,body.comparing .controls{grid-template-columns:1fr}.control-section:nth-child(3){border-bottom:1px solid var(--line)}.style-choice strong{font-size:12px}.style-choice small{font-size:9px}.edition{display:none}.world-footer{align-items:flex-start}.world-footer>span{max-width:120px}.world-toolbar #scene-caption{max-width:110px}.world-toolbar #routine-caption{max-width:110px}.person-card{gap:12px}.portrait{width:65px;height:85px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">✣</span><div><h1>Abbey</h1><p>A small beginning. A lasting place.</p></div></div>
+    <div class="edition"><span>CANDLELIGHT</span><p>Animated art studies · 0.0.1</p></div>
+    <button id="compare" class="button secondary" aria-pressed="false">Compare all three</button>
+  </header>
+  <main>
+    <div class="study-heading"><div><span class="eyebrow">A CLEARING IN THE WOODS</span><h2>Three ways to see our abbey.</h2></div><p>Let the day pass. Watch the brothers gather.<br>Find the world you want to spend time in.</p></div>
+    <nav class="styles" aria-label="Art direction">
+      <button class="style-choice active" data-style="orchard" aria-pressed="true"><span class="style-number">01</span><span><strong>Orchard Cloister</strong><small>Warm stone & rounded greenery</small></span><span class="swatches orchard" aria-hidden="true"><i></i><i></i><i></i></span></button>
+      <button class="style-choice" data-style="manuscript" aria-pressed="false"><span class="style-number">02</span><span><strong>Living Manuscript</strong><small>Jewel tones & illustrated margins</small></span><span class="swatches manuscript" aria-hidden="true"><i></i><i></i><i></i></span></button>
+      <button class="style-choice" data-style="storybook" aria-pressed="false"><span class="style-number">03</span><span><strong>Sunlit Storybook</strong><small>Soft shapes & a gentler light</small></span><span class="swatches storybook" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    </nav>
+    <div class="workspace">
+      <section class="world-panel" aria-label="Animated abbey clearing">
+        <div class="world-toolbar"><span id="scene-caption">Orchard Cloister</span><span id="routine-caption">An afternoon of work</span><button id="pause" class="button small" aria-pressed="false">Pause</button></div>
+        <div id="scenes" class="scenes"></div>
+        <div class="world-footer"><span>Drag to explore · Select a brother to meet him</span><div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="reset-view">Center</button></div></div>
+      </section>
+      <aside class="controls" aria-label="Study controls">
+        <section class="control-section"><h3>The passing day</h3><div class="label-row"><label for="hour">Light</label><output id="hour-value">14:00 · Day</output></div><input id="hour" type="range" min="0" max="24" step="0.1" value="14"><div class="segmented" aria-label="Light presets"><button data-hour="6">Dawn</button><button data-hour="14">Day</button><button data-hour="19">Dusk</button><button data-hour="23">Night</button></div><label class="check"><input id="cycle-day" type="checkbox">Let the light change</label></section>
+        <section class="control-section"><label class="section-label" for="weather">Through the seasons</label><select id="weather"><option value="clear">Clear skies</option><option value="rain">A passing rain</option><option value="fog">Morning mist</option><option value="snow">Winter snowfall</option></select></section>
+        <section class="control-section"><h3>A church taking shape</h3><div class="label-row"><label for="construction">Construction</label><output id="construction-value">Walls & piers</output></div><input id="construction" type="range" min="0" max="5" value="2"><div class="range-labels"><span>Survey</span><span>Complete</span></div><label class="check"><input id="build-cycle" type="checkbox">Watch it being built</label></section>
+        <section class="control-section"><h3>The life of the house</h3><button id="vespers" class="button primary wide">Call the brothers to Vespers</button><p class="control-hint">They gather at the chapel, keep a quiet observance, then return to work.</p><div class="label-row"><label for="speed">Animation pace</label><select id="speed"><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div><label class="check"><input id="reduced-motion" type="checkbox">Still scene / reduced motion</label></section>
+      </aside>
+    </div>
+    <div class="below-world">
+      <section class="person-card" aria-label="Meet a brother"><div id="portrait" class="portrait" aria-hidden="true"></div><div class="person-info"><div class="label-row"><label for="person" class="eyebrow">MEET A BROTHER</label><select id="person" aria-label="Choose a brother"></select></div><h3 id="person-name">Brother Thomas</h3><p id="person-description"></p><p class="person-thought" id="person-thought"></p></div></section>
+      <section class="story-card"><span class="eyebrow">A STORY IN THE MAKING</span><h3>The last dry timber</h3><p>A roof to mend. A church to raise.<br>Two promises, and one stack of timber.</p><button id="open-event" class="text-button">Open the illustrated event <span aria-hidden="true">↗</span></button></section>
+      <section class="review-card"><span class="eyebrow">TAKE A CLOSER LOOK</span><p id="style-description"></p><div class="review-actions"><button id="save-frame" class="button secondary small">Save this frame</button><button id="restart" class="text-button">Restart scene</button></div><details id="timing-details"><summary>Frame timing</summary><p id="timing">Collecting visible frame intervals…</p><label class="check"><input id="stress" type="checkbox">200-figure stress scene</label><p class="control-hint">Timing describes this browser and device; it is not a native-game benchmark.</p></details></section>
+    </div>
+    <footer class="page-footer"><span>Abbey · Candlelight 0.0.1</span><span>A visual study with scripted routines. The settlement simulation comes next.</span></footer>
+  </main>
+  <dialog id="event-dialog" aria-labelledby="event-title"><button id="close-event" class="dialog-close" aria-label="Close event">×</button><div id="event-art"></div><div class="event-copy"><span class="eyebrow">A QUESTION FOR THE CHAPTER</span><h2 id="event-title">The last dry timber</h2><p>Rain beads on the guesthouse rafters. Oswin has counted the dry beams twice. Thomas waits beside the chapel plans.</p><blockquote>“The church can wait a little,” says Martin. “Our guests are wet tonight.”</blockquote><p class="event-note">An illustration and layout study. These choices show narrative tone; they do not change an economy yet.</p><div id="event-choices"><button data-choice="shelter">Shelter the guests first.<small>The chapel work can resume when the next timber arrives.</small></button><button data-choice="church">Keep the timber for the church.<small>Close the wet guest beds and explain the delay to Martin.</small></button><button data-choice="trade">Ask Agnes about another load.<small>See what a second promise would cost.</small></button></div><p id="event-response" aria-live="polite"></p></div></dialog>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <script>
+/* Original procedural SVG artwork for Abbey. No external fonts, images, or libraries. */
+(function (root) {
+  'use strict';
+  const palettes = {
+    orchard: {
+      name: 'Orchard Cloister', ink: '#40533b', outline: 1.65,
+      sky: '#e6edd1', ground: '#bbcf98', grass: '#a4bd7e', grassLight: '#cfdfa7',
+      leaf: '#6f984f', leafDark: '#487646', leafLight: '#a1bb65', trunk: '#78684a',
+      stone: '#e4cfa5', stoneShade: '#c9b589', stoneLight: '#f3e3be',
+      roof: '#b66c49', roofShade: '#884f39', wood: '#b79161', woodDark: '#7b6548',
+      path: '#decfa7', water: '#87b8af', habit: '#68533e', habitLight: '#897053',
+      accent: '#d4a149', flowers: '#d78974', skin: '#dbac7c',
+      description: 'Rounded canopies, clear contours, terracotta roofs, and warm limestone. A simple, readable world with room for architectural detail.'
+    },
+    manuscript: {
+      name: 'Living Manuscript', ink: '#3d4542', outline: 2,
+      sky: '#e8dfbc', ground: '#c8cc93', grass: '#a5b478', grassLight: '#dedcab',
+      leaf: '#387972', leafDark: '#235c59', leafLight: '#76a389', trunk: '#766249',
+      stone: '#e5cb92', stoneShade: '#c09c63', stoneLight: '#f2dfad',
+      roof: '#996073', roofShade: '#754456', wood: '#b28e59', woodDark: '#796344',
+      path: '#e7d8ad', water: '#6aa4ae', habit: '#514c59', habitLight: '#797084',
+      accent: '#b78c37', flowers: '#af606e', skin: '#d3a17a',
+      description: 'Leaf-shaped trees, inked architectural details, patterned roofs, and gilded margins. The strongest manuscript character of the three.'
+    },
+    storybook: {
+      name: 'Sunlit Storybook', ink: '#657657', outline: .85,
+      sky: '#e4ecd9', ground: '#c5d6ae', grass: '#aac799', grassLight: '#d8e4bd',
+      leaf: '#86ac78', leafDark: '#608c68', leafLight: '#b6ce8a', trunk: '#948166',
+      stone: '#efdac0', stoneShade: '#d6bea5', stoneLight: '#faead4',
+      roof: '#b68990', roofShade: '#926b80', wood: '#bea17c', woodDark: '#967857',
+      path: '#e5d9bc', water: '#a2c8c2', habit: '#897466', habitLight: '#ac9580',
+      accent: '#c09b5e', flowers: '#d0a0b4', skin: '#e5b995',
+      description: 'Cloudlike trees, softer edges, lavender roofs, and broad pools of color. Gentle and inviting, with fewer inked boundaries.'
+    }
+  };
+  const stageNames = ['Survey & ropes', 'Foundations', 'Walls & piers', 'Arches & scaffolds', 'The timber roof', 'A finished chapel'];
+  const brothers = [
+    {name:'Brother Thomas', role:'Aspiring mason', traits:'Ambitious · Exacting', thought:'“One day, there will be an arch here that outlives all of us.”', action:'Carrying stone to the chapel.', reason:'He has volunteered to help Walter with the new bay.', skin:'#d6a16c', beard:false},
+    {name:'Brother Oswin', role:'Cellarer', traits:'Exacting · Cautious', thought:'“A fine church still needs a full storehouse.”', action:'Checking the timber stores.', reason:'He wants to know what remains before promising more.', skin:'#c79361', beard:true},
+    {name:'Brother Martin', role:'Cook', traits:'Generous · Sociable', thought:'“There is always room for one more bowl.”', action:'Taking provisions to the kitchen.', reason:'The evening meal will soon need his attention.', skin:'#e4b98e', beard:false},
+    {name:'Brother Hugh', role:'Gardener', traits:'Patient · Cautious', thought:'“The ground is telling us something. Give it a moment.”', action:'Tending the garden.', reason:'He is showing Peter how to loosen the soil.', skin:'#b67f55', beard:true},
+    {name:'Peter', role:'Novice', traits:'Curious · Restless', thought:'“Can I try the saw when we finish?”', action:'Helping in the garden.', reason:'Hugh has asked him to finish one row carefully.', skin:'#edc098', beard:false},
+    {name:'Brother Anselm', role:'Acting superior', traits:'Patient · Cautious', thought:'“Let us promise only what we can keep.”', action:'Walking between the worksite and the house.', reason:'He is listening before deciding the next priority.', skin:'#d1a07b', beard:true},
+    {name:'Brother Edmund', role:'Study extra', traits:'Quiet · Observant', thought:'“Even the woodpecker seems to have a task.”', action:'Walking the clearing.', reason:'A background figure for testing silhouettes and animation.', skin:'#cc9567', beard:false},
+    {name:'Brother Luke', role:'Study extra', traits:'Cheerful · Patient', thought:'“We have made a good beginning.”', action:'Bringing a basket to the house.', reason:'A background figure for testing carrying poses.', skin:'#ac794f', beard:true},
+    {name:'Brother William', role:'Study extra', traits:'Steady · Careful', thought:'“Measure once more before we lift it.”', action:'Inspecting a stack of stone.', reason:'A background figure for testing scale and motion.', skin:'#e0b28d', beard:false},
+    {name:'Brother Robert', role:'Study extra', traits:'Sociable · Curious', thought:'“I wonder what Agnes will bring tomorrow.”', action:'Crossing the clearing.', reason:'A background figure for testing movement and overlap.', skin:'#cc936d', beard:true},
+    {name:'Brother Gilbert', role:'Study extra', traits:'Practical · Patient', thought:'“A dry roof is a blessing in any season.”', action:'Carrying a beam.', reason:'A background figure for testing the timber animation.', skin:'#e0ad7e', beard:false},
+    {name:'Brother Stephen', role:'Study extra', traits:'Gentle · Quiet', thought:'“Listen. The bell carries all the way to the trees.”', action:'Walking past the well.', reason:'A background figure for testing the shared routine.', skin:'#bf8759', beard:false}
+  ];
+  function escape(value) { return String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function element(name, attrs, content) {
+    const attributes = Object.entries(attrs || {}).filter(function(pair){return pair[1] !== undefined;})
+      .map(function(pair){return ' '+pair[0]+'="'+escape(pair[1])+'"';}).join('');
+    return '<'+name+attributes+'>'+(content || '')+'</'+name+'>';
+  }
+  function point(x, y, z) { return [640+(x-y)*36, 134+(x+y)*18-(z || 0)]; }
+  function polygon(points, fill, stroke, width, extra) {
+    return element('polygon', Object.assign({points:points.map(function(p){return p.map(function(n){return +n.toFixed(2);}).join(',');}).join(' '),fill:fill,stroke:stroke || 'none','stroke-width':width || 0,'stroke-linejoin':'round'},extra));
+  }
+  function line(points, stroke, width, extra) {
+    return element('polyline',Object.assign({points:points.map(function(p){return p.join(',');}).join(' '),fill:'none',stroke:stroke,'stroke-width':width || 1.5,'stroke-linecap':'round','stroke-linejoin':'round'},extra));
+  }
+  function circle(x,y,r,fill,extra) { return element('circle',Object.assign({cx:x,cy:y,r:r,fill:fill},extra)); }
+  function ellipse(x,y,rx,ry,fill,extra) { return element('ellipse',Object.assign({cx:x,cy:y,rx:rx,ry:ry,fill:fill},extra)); }
+  function path(d,fill,extra){return element('path',Object.assign({d:d,fill:fill},extra));}
+  function group(transform, content, extra) { return element('g',Object.assign({transform:transform},extra),content); }
+  function seeded(seed) {
+    let value=seed>>>0;
+    return function(){value=(Math.imul(1664525,value)+1013904223)>>>0;return value/4294967296;};
+  }
+  function tile(x,y,w,d,fill,stroke,width) {return polygon([point(x,y),point(x+w,y),point(x+w,y+d),point(x,y+d)],fill,stroke,width);}
+  function tree(style, variant) {
+    const p=palettes[style], outline={stroke:p.ink,'stroke-width':p.outline,'stroke-linejoin':'round'};
+    let artwork=ellipse(2,1,27,11,'#33462a',{opacity:.12});
+    artwork+=path('M-6 0 L-4 -62 L5 -66 L8 0 Z',p.trunk,outline);
+    artwork+=line([[-1,-32],[-20,-61]],p.trunk,6)+line([[2,-43],[25,-69]],p.trunk,5);
+    if(style==='manuscript'){
+      artwork+=path('M0 -139 C-47 -113 -58 -75 -30 -51 C-8 -34 22 -38 38 -59 C58 -89 25 -120 0 -139Z',p.leafDark,outline);
+      [[-22,-82,-27],[18,-103,23],[22,-68,54],[-17,-113,-20],[0,-64,0]].forEach(function(v,i){
+        artwork+=group('translate('+v[0]+' '+v[1]+') rotate('+v[2]+')',path('M0 23 C-28 6 -23 -24 0 -39 C22 -22 27 5 0 23Z',i%2?p.leaf:p.leafLight,outline)+line([[0,17],[0,-27]],p.ink,1)+line([[0,-2],[-10,-13]],p.ink,1)+line([[0,-13],[11,-24]],p.ink,1));
+      });
+      artwork+=circle(0,-141,4,p.accent);
+    }else if(style==='storybook'){
+      artwork+=path('M-9 -46 C-51 -35 -63 -63 -47 -82 C-71 -107 -41 -135 -18 -123 C-9 -153 35 -146 40 -122 C74 -115 71 -84 49 -75 C56 -45 23 -33 -9 -46Z',p.leafDark);
+      artwork+=path('M-15 -60 C-56 -59 -46 -92 -34 -94 C-48 -118 -19 -134 -4 -119 C12 -142 43 -120 36 -103 C61 -94 39 -68 22 -73 C15 -56 -1 -52 -15 -60Z',p.leaf);
+      artwork+=ellipse(-17,-105,24,15,p.leafLight,{opacity:.65})+ellipse(16,-116,17,12,p.leafLight,{opacity:.45});
+    }else{
+      artwork+=ellipse(0,-80,46,43,p.leafDark,outline);
+      artwork+=circle(-24,-96,25,p.leaf,outline)+circle(4,-119,29,p.leaf,outline)+circle(29,-88,28,p.leaf,outline);
+      artwork+=circle(-10,-95,33,p.leaf)+ellipse(-10,-118,20,10,p.leafLight,{opacity:.7});
+      artwork+=ellipse(-32,-93,10,5,p.leafLight,{opacity:.55})+ellipse(26,-95,11,6,p.leafLight,{opacity:.45});
+    }
+    if(variant===1){[[-25,-87],[16,-110],[32,-78],[-6,-65]].forEach(function(v){artwork+=circle(v[0],v[1],3.1,p.flowers,{stroke:p.ink,'stroke-width':.5});});}
+    return artwork;
+  }
+  function defs(style,prefix) {
+    const p=palettes[style];
+    const radial=element('radialGradient',{id:prefix+'glow'},element('stop',{offset:'0%','stop-color':'#ffd47a','stop-opacity':.85})+element('stop',{offset:'45%','stop-color':'#ffd47a','stop-opacity':.3})+element('stop',{offset:'100%','stop-color':'#ffd47a','stop-opacity':0}));
+    const mist=element('linearGradient',{id:prefix+'mist',x1:0,y1:0,x2:0,y2:1},element('stop',{offset:0,'stop-color':'#f1f4e7','stop-opacity':0})+element('stop',{offset:1,'stop-color':'#f1f4e7','stop-opacity':.85}));
+    const softFog=element('radialGradient',{id:prefix+'soft-fog'},element('stop',{offset:'0%','stop-color':'#f1f4e7','stop-opacity':.8})+element('stop',{offset:'100%','stop-color':'#f1f4e7','stop-opacity':0}));
+    const sky=element('linearGradient',{id:prefix+'sky',x1:0,y1:0,x2:0,y2:1},element('stop',{offset:0,'stop-color':p.sky})+element('stop',{offset:1,'stop-color':p.ground}));
+    return element('defs',{},radial+mist+softFog+sky+element('g',{id:prefix+'tree0'},tree(style,0))+element('g',{id:prefix+'tree1'},tree(style,1)));
+  }
+  function frontFeature(x,y,z,width,height,p,kind) {
+    const at=point(x,y,z);
+    let content=path('M0 0 V'+(-height+width/2)+' Q'+(width/2)+' '+(-height-width/2)+' '+width+' '+(-height+width/2)+' V0Z',kind==='door'?p.woodDark:'#655e44',{stroke:p.ink,'stroke-width':1.5});
+    if(kind==='door'){
+      for(let u=5;u<width;u+=6)content+=line([[u,0],[u,-height+8]],p.wood,1);
+      content+=circle(width*.75,-height*.4,1.5,p.accent);
+    }else if(kind==='window'){
+      content+=path('M3 -2 V'+(-height+width/2)+' Q'+(width/2)+' '+(-height+1)+' '+(width-3)+' '+(-height+width/2)+' V-2Z','#d7bb7d',{'data-window':'true'});
+      content+=line([[width/2,-2],[width/2,-height+4]],p.ink,1.5);
+    }
+    return group('matrix(1 .5 0 1 '+at[0]+' '+at[1]+')',content);
+  }
+  function building(style,x,y,w,d,height,roofHeight,kind,stage) {
+    const p=palettes[style], s=stage===undefined?5:stage, construction=kind==='construction';
+    const A=function(z){return point(x,y,z);},B=function(z){return point(x+w,y,z);},C=function(z){return point(x+w,y+d,z);},D=function(z){return point(x,y+d,z);};
+    let result=polygon([A(0),B(0),point(x+w+.4,y+d+.4),point(x+.1,y+d+.4)],'#435234','',0,{opacity:.13});
+    if(construction && s===0){
+      result+=polygon([A(0),B(0),C(0),D(0)],p.path,p.woodDark,2,{'stroke-dasharray':'6 5'});
+      [A(0),B(0),C(0),D(0)].forEach(function(a){result+=line([[a[0],a[1]],[a[0],a[1]-13]],p.woodDark,3);});
+      return result;
+    }
+    const h=construction?[0,10,40,height,height,height][s]:height;
+    if(construction&&s<4){
+      result+=polygon([A(0),B(0),B(h),A(h)],p.stone,p.ink,p.outline);
+      result+=polygon([A(0),D(0),D(h),A(h)],p.stoneShade,p.ink,p.outline);
+      result+=polygon([point(x+.2,y+.2,1),point(x+w-.2,y+.2,1),point(x+w-.2,y+d-.2,1),point(x+.2,y+d-.2,1)],p.path);
+      result+=polygon([point(x+.2,y+.2,1),point(x+w-.2,y+.2,1),point(x+w-.2,y+.2,h),point(x+.2,y+.2,h)],p.stoneLight,p.stoneShade,1);
+      result+=polygon([point(x+.2,y+.2,1),point(x+.2,y+d-.2,1),point(x+.2,y+d-.2,h),point(x+.2,y+.2,h)],p.stone,p.stoneShade,1);
+    }
+    result+=polygon([B(0),C(0),C(h),B(h)],p.stoneShade,p.ink,p.outline);
+    result+=polygon([D(0),C(0),C(h),D(h)],kind==='kitchen'?p.wood:p.stone,p.ink,p.outline);
+    if(construction && s<4){
+      const outer=[A(h),B(h),C(h),D(h)];
+      const inner=[point(x+.22,y+.22,h),point(x+w-.22,y+.22,h),point(x+w-.22,y+d-.22,h),point(x+.22,y+d-.22,h)];
+      for(let i=0;i<4;i++)result+=polygon([outer[i],outer[(i+1)%4],inner[(i+1)%4],inner[i]],p.stoneLight,p.stoneShade,.7);
+    }else result+=polygon([A(h),B(h),C(h),D(h)],p.stoneLight,p.ink,p.outline);
+    for(let z=12;z<h;z+=12){
+      result+=line([D(z),C(z),B(z)],p.woodDark,.7,{opacity:.3});
+      for(let u=.5+(Math.floor(z/12)%2)*.4;u<w;u+=.8)result+=line([point(x+u,y+d,z),point(x+u,y+d,z-11)],p.woodDark,.7,{opacity:.28});
+    }
+    if(s>=2||!construction){
+      const doorWidth=kind==='chapel'?26:21;
+      result+=frontFeature(x+w*.42,y+d,0,doorWidth,Math.min(43,h-3),p,construction&&s<5?'opening':'door');
+      if(h>50){
+        result+=frontFeature(x+.34,y+d,24,12,24,p,'window');
+        if(w>2.5)result+=frontFeature(x+w-.76,y+d,24,12,24,p,'window');
+      }
+    }
+    if((s>=4||!construction)){
+      const ridgeBack=point(x+w/2,y,height+roofHeight), ridgeFront=point(x+w/2,y+d,height+roofHeight);
+      result+=polygon([D(height),C(height),ridgeFront],p.stoneLight,p.ink,p.outline);
+      if(style==='manuscript'){
+        result+=circle((D(height)[0]+C(height)[0])/2,(D(height)[1]+C(height)[1])/2-22,8,p.accent,{stroke:p.ink,'stroke-width':1.5});
+        result+=line([[ridgeFront[0]-6,ridgeFront[1]+15],[ridgeFront[0]+6,ridgeFront[1]+15]],p.ink,1.2);
+      }
+      result+=polygon([A(height),ridgeBack,ridgeFront,D(height)],p.roof,p.ink,p.outline);
+      result+=polygon([ridgeBack,B(height),C(height),ridgeFront],p.roofShade,p.ink,p.outline);
+      for(let t=.18;t<1;t+=.18){
+        const back=point(x+w/2+w/2*t,y,height+roofHeight*(1-t));
+        const front=point(x+w/2+w/2*t,y+d,height+roofHeight*(1-t));
+        result+=line([back,front],p.roof,.9,{opacity:.65});
+      }
+      if(style==='manuscript'){
+        for(let v=.25;v<d;v+=.48)result+=line([point(x,y+v,height),point(x+w/2,y+v,height+roofHeight),point(x+w,y+v,height)],p.accent,.75,{opacity:.7});
+      }
+      result+=polygon([A(height),ridgeBack,ridgeFront,D(height)],'#f5f7e8','',0,{'data-snow':'roof',opacity:0});
+      result+=polygon([ridgeBack,B(height),C(height),ridgeFront],'#e3ecdf','',0,{'data-snow':'roof',opacity:0});
+      if(construction && s===4){
+        result+=polygon([point(x+w*.55,y+d*.5,height+roofHeight*.9),point(x+w,y+d*.5,height),C(height),ridgeFront],p.wood,p.ink,1);
+        for(let v=d*.52;v<d;v+=.34)result+=line([point(x+w/2,y+v,height+roofHeight),point(x+w,y+v,height)],p.woodDark,3);
+      }
+      if(kind==='chapel'){
+        const b=point(x+w/2,y+.8,height+roofHeight);
+        result+=group('translate('+b[0]+' '+b[1]+')',
+          polygon([[-14,3],[14,3],[14,-28],[-14,-28]],p.wood,p.ink,1.5)+
+          path('M-8 -3 V-20 Q0 -32 8 -20 V-3Z',p.woodDark)+
+          group('translate(0 -20)',path('M-5 3 Q-5 9 -8 12 H8 Q5 9 5 3Z',p.accent,{stroke:p.ink,'stroke-width':1})+circle(0,14,2,p.ink),{'data-bell':'true'})+
+          polygon([[-19,-28],[0,-47],[19,-28]],p.roofShade,p.ink,1.5)+line([[0,-47],[0,-59]],p.ink,2)+line([[-5,-54],[5,-54]],p.ink,2));
+      }
+      if(kind==='kitchen'){
+        const chimney=point(x+w*.72,y+.4,height+roofHeight*.6);
+        result+=group('translate('+chimney[0]+' '+chimney[1]+')',element('rect',{x:-7,y:-31,width:14,height:30,fill:p.stone,stroke:p.ink,'stroke-width':1.2})+line([[-9,-31],[9,-31]],p.stoneShade,5));
+      }
+    }
+    if(construction && s>=2&&s<5){
+      const sh=height+11;
+      [.05,w+.3].forEach(function(u){
+        result+=line([point(x+u,y+d+.35,0),point(x+u,y+d+.35,sh)],p.woodDark,4);
+      });
+      result+=line([point(x+.05,y+d+.35,sh-10),point(x+w+.3,y+d+.35,sh-10)],p.wood,7);
+      result+=line([point(x+.05,y+d+.35,sh-28),point(x+w+.3,y+d+.35,sh-28)],p.woodDark,2.5);
+      result+=line([point(x+.05,y+d+.35,8),point(x+w+.3,y+d+.35,sh-29)],p.woodDark,2.5);
+      const ladderStart=point(x+w+.6,y+d+.7,0), ladderEnd=point(x+w+.3,y+d+.35,sh-9);
+      [-4,4].forEach(function(o){result+=line([[ladderStart[0]+o,ladderStart[1]],[ladderEnd[0]+o,ladderEnd[1]]],p.woodDark,2);});
+      for(let t=.1;t<1;t+=.12)result+=line([[ladderStart[0]*(1-t)+ladderEnd[0]*t-4,ladderStart[1]*(1-t)+ladderEnd[1]*t],[ladderStart[0]*(1-t)+ladderEnd[0]*t+4,ladderStart[1]*(1-t)+ladderEnd[1]*t]],p.woodDark,2);
+      if(s===3){
+        const at=point(x+w*.4,y+d,0);
+        result+=group('matrix(1 .5 0 1 '+at[0]+' '+at[1]+')',path('M-3 -40 Q12 -74 31 -40 L26 -37 Q12 -65 1 -37Z',p.wood,{stroke:p.woodDark,'stroke-width':1})+line([[14,-42],[14,-65]],p.woodDark,2));
+      }
+    }
+    return result;
+  }
+  function monk(style,index,portrait) {
+    const p=palettes[style], person=brothers[index%brothers.length], habit=index%3===1?p.habitLight:p.habit;
+    const stroke={stroke:p.ink,'stroke-width':portrait?1.1:.9,'stroke-linejoin':'round'};
+    let result=ellipse(0,0,10,4,'#2c402a',{opacity:.2,'data-shadow':'true'});
+    result+=group('',path('M-6 -8 L-6 0', 'none',{stroke:p.woodDark,'stroke-width':4,'stroke-linecap':'round'}),{'data-leg':'left'});
+    result+=group('',path('M5 -8 L5 0', 'none',{stroke:p.woodDark,'stroke-width':4,'stroke-linecap':'round'}),{'data-leg':'right'});
+    result+=path(style==='manuscript'?'M-6 -28 L6 -28 L12 -3 L-11 -3Z':'M-5 -28 Q0 -31 6 -28 Q8 -17 11 -4 Q0 1 -11 -4 Q-8 -17 -5 -28Z',habit,stroke);
+    result+=path('M-4 -25 Q-1 -13 -4 -5 L3 -4 Q1 -17 4 -25Z',p.habitLight,{opacity:.6});
+    result+=line([[-8,-17],[8,-16]],p.woodDark,1.3);
+    result+=group('',line([[-6,-26],[-10,-17],[-8,-12]],habit,5),{'data-arm':'left'});
+    result+=group('',line([[6,-26],[10,-17],[9,-11]],habit,5),{'data-arm':'right'});
+    result+=ellipse(0,-31,8,7,p.habitLight,stroke);
+    result+=circle(0,-36,7.2,person.skin,stroke)+path('M-7 -37 Q-7 -47 0 -45 Q8 -45 7 -37 Q3 -39 0 -39 Q-4 -39 -7 -37Z',index===5?'#b8b4a2':p.woodDark);
+    result+=ellipse(0,-43,3.8,2.5,person.skin);
+    result+=circle(-2.7,-36.5,.7,p.ink)+circle(2.7,-36.5,.7,p.ink);
+    if(person.beard)result+=path('M-5 -33 Q0 -27 5 -33 Q4 -26 0 -25 Q-4 -26 -5 -33Z',index===5?'#c9c3ad':p.woodDark);
+    else result+=path('M-2 -32 Q0 -31 2 -32','none',{stroke:p.ink,'stroke-width':.6});
+    result+=group('',element('rect',{x:-12,y:-20,width:24,height:9,rx:2,fill:index%3===0?p.stone:p.wood,stroke:p.woodDark,'stroke-width':1}),{'data-load':'true'});
+    return result;
+  }
+  function portrait(style,index) {return element('svg',{xmlns:'http://www.w3.org/2000/svg',viewBox:'0 0 84 100'},group('translate(42 108) scale(2.2)',monk(style,index,true)));}
+  function eventArt(style) {
+    const p=palettes[style];let art=element('rect',{width:640,height:240,fill:p.sky});
+    art+=path('M0 80 Q110 30 230 80 Q440 18 640 75 V240 H0Z',p.grass);
+    art+=group('translate(88 180) scale(.92)',tree(style,0))+group('translate(592 171) scale(1.1)',tree(style,1));
+    art+=element('rect',{x:165,y:78,width:300,height:130,fill:p.stone,stroke:p.ink,'stroke-width':2});
+    art+=polygon([[144,82],[316,12],[488,82]],p.roof,p.ink,2);
+    for(let y=100;y<200;y+=21)art+=line([[165,y],[465,y]],p.stoneShade,1);
+    art+=path('M289 208 V143 Q317 94 345 143 V208Z',p.woodDark);
+    for(let i=0;i<5;i++)art+=element('rect',{x:365+i*3,y:195-i*10,width:104,height:9,rx:2,fill:p.wood,stroke:p.woodDark,'stroke-width':1});
+    art+=group('translate(243 229) scale(2.7)',monk(style,1,true))+group('translate(360 232) scale(2.8)',monk(style,0,true));
+    for(let i=0;i<35;i++){const x=(i*97)%640,y=(i*41)%230;art+=line([[x,y],[x-5,y+14]],'#a6b8ac',1.3,{opacity:.65});}
+    if(style==='manuscript')art+=element('rect',{x:9,y:9,width:622,height:222,fill:'none',stroke:p.accent,'stroke-width':3})+element('rect',{x:15,y:15,width:610,height:210,fill:'none',stroke:p.ink,'stroke-width':.8});
+    return element('svg',{xmlns:'http://www.w3.org/2000/svg',viewBox:'0 0 640 240',role:'img','aria-label':'Two brothers discuss a small stack of timber outside the guesthouse in the rain.'},art);
+  }
+  root.AbbeyArt={palettes:palettes,stageNames:stageNames,brothers:brothers,element:element,point:point,polygon:polygon,line:line,circle:circle,ellipse:ellipse,path:path,group:group,tile:tile,seeded:seeded,defs:defs,building:building,monk:monk,portrait:portrait,eventArt:eventArt};
+})(globalThis);
+
+</script>
+  <script>
+(function(root) {
+  'use strict';
+  const A=root.AbbeyArt, E=A.element, P=A.point, G=A.group;
+  const routes=[
+    [[12.9,10.1],[12.8,8.9],[10.7,8.1],[10.7,8.1],[12.8,8.9]],
+    [[8.2,9.1],[10.6,10.4],[12.7,11.5],[12.7,11.5],[10.6,10.4]],
+    [[4.6,11.8],[6.4,11.8],[7.8,9.2],[7.8,9.2],[6.4,11.8]],
+    [[9.0,13.6],[9.7,13.6],[9.7,13.6],[9.0,13.6]],
+    [[10.2,13.7],[11.3,13.7],[11.3,13.7],[10.2,13.7]],
+    [[6.7,7.4],[8.2,9],[10.7,8.2],[8.2,9],[6.7,7.4]],
+    [[2.7,8.2],[3.4,7.6],[5.1,8.3],[5.1,8.3],[3.4,7.6]],
+    [[5.9,12.1],[7.8,12.2],[8.2,9.3],[7.8,12.2]],
+    [[12.4,8.6],[12.9,10.4],[12.9,10.4],[12.4,8.6]],
+    [[9,9.4],[10.8,10.3],[13.0,12.0],[10.8,10.3]],
+    [[12.6,11.7],[11.4,10.5],[10.6,8.6],[11.4,10.5]],
+    [[7.3,8.4],[5.7,8.4],[5.2,7.4],[5.7,8.4]]
+  ];
+  function interpolate(a,b,t){return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+  function routePosition(index,time) {
+    const route=routes[index%routes.length], step=5.1+(index%4)*.43;
+    const progress=time/step+index*.37, segment=Math.floor(progress)%route.length, t=progress-Math.floor(progress);
+    const start=route[segment],end=route[(segment+1)%route.length];
+    return {position:interpolate(start,end,t),moving:start[0]!==end[0]||start[1]!==end[1],direction:end[0]-start[0]-(end[1]-start[1])};
+  }
+  function servicePosition(index,state) {
+    const normal=routePosition(index,state.workTime), t=state.serviceTime;
+    if(t===null)return normal;
+    const start=normal.position, target=[6.0+(index%4)*.6,7.4+Math.floor(index/4)*.53];
+    const hub=[8.15,9.15];
+    const progress=t<12?t/12:t<24?1:1-(t-24)/12;
+    const q=Math.max(0,Math.min(1,progress));
+    let position;
+    if(q<.52)position=interpolate(start,hub,q/.52);
+    else position=interpolate(hub,target,(q-.52)/.48);
+    return {position:position,moving:t<12||t>=24,direction:t<12?-1:1,gathered:t>=12&&t<24};
+  }
+  function lighting(hour) {
+    const h=((hour%24)+24)%24;
+    let darkness;
+    if(h<5)darkness=.63;
+    else if(h<8)darkness=.63*(1-(h-5)/3);
+    else if(h<17)darkness=0;
+    else if(h<21)darkness=.63*(h-17)/4;
+    else darkness=.63;
+    const dusk=Math.max(0,1-Math.abs(h-18.8)/2.5);
+    return {darkness:darkness,dusk:dusk};
+  }
+  function ground(style) {
+    const p=A.palettes[style], r=A.seeded(2304);
+    let out=E('rect',{width:1280,height:850,fill:'url(#'+style+'-sky)'});
+    out+=A.path('M0 183 Q160 71 335 144 Q501 29 685 108 Q872 24 1054 114 Q1174 73 1280 132 V850 H0Z',p.grass,{opacity:.55});
+    out+=A.path('M0 281 Q146 167 295 208 Q366 154 478 204 Q655 135 812 192 Q1004 112 1280 254 V850 H0Z',p.ground);
+    out+=A.path('M248 287 Q432 185 618 251 Q827 200 1017 321 Q1120 424 1030 576 Q997 650 786 680 Q622 737 385 653 Q234 614 212 486 Q155 349 248 287Z',p.grassLight,{opacity:.75});
+    for(let i=0;i<210;i++){
+      const x=r()*1280,y=240+r()*610;
+      out+=A.ellipse(x,y,5+r()*24,2+r()*6,i%2?p.grass:p.grassLight,{opacity:.26});
+    }
+    out+=A.path('M-25 571 C91 540 115 665 252 670 C371 679 405 749 552 750 C740 750 764 800 884 769 C1054 728 1045 679 1305 709',p.water,{fill:'none',stroke:p.path,'stroke-width':49});
+    out+=A.path('M-25 571 C91 540 115 665 252 670 C371 679 405 749 552 750 C740 750 764 800 884 769 C1054 728 1045 679 1305 709','none',{stroke:p.water,'stroke-width':37});
+    [[84,608],[256,676],[469,745],[712,779],[934,752],[1168,706]].forEach(function(v){
+      out+=A.path('M'+v[0]+' '+v[1]+' q18 -5 38 2','none',{stroke:'#e9f1d7','stroke-width':1.7,opacity:.7});
+    });
+    const paths=[
+      [[6.4,6.6],[6.5,7.5],[8.15,9.1],[10.5,10.2],[13.5,12.8],[15.7,14.3],[17.3,15.45]],
+      [[8.15,9.1],[6.5,11.9],[4.5,11.9],[4.5,11.3]],
+      [[8.15,9.1],[10.4,8.1],[12.8,8.6],[12.9,10.1]],
+      [[10.5,10.2],[12.4,11.6],[11.8,13.8],[8.7,13.7]],
+      [[6.5,7.5],[4.6,8.3],[2.8,7.9]]
+    ];
+    paths.forEach(function(points){
+      out+=A.line(points.map(function(v){return P(v[0],v[1]);}),p.path,25);
+      out+=A.line(points.map(function(v){return P(v[0],v[1]);}),p.stoneLight,16,{opacity:.3});
+    });
+    const garden=[7.7,10.0,3.8,3.1];
+    out+=A.tile.apply(null,garden.concat([p.woodDark,p.woodDark,3]));
+    for(let row=0;row<5;row++){
+      out+=A.tile(7.86,10.13+row*.6,3.48,.35,p.wood);
+      for(let col=0;col<9;col++){
+        const pos=P(8.02+col*.4,10.27+row*.6);
+        out+=A.ellipse(pos[0],pos[1],6,3,p.leafDark);
+        out+=A.path('M'+pos[0]+' '+pos[1]+' q-10 -12 -2 -8 q6 -14 7 -4 q10 -4 -1 10',row%2?p.leaf:p.leafLight,{stroke:p.leafDark,'stroke-width':.6});
+      }
+    }
+    // Moss, small flowers, and tufts keep the foreground readable at either zoom level.
+    for(let i=0;i<130;i++){
+      const x=35+r()*1210,y=250+r()*550;
+      if(x>340&&x<1000&&y<600)continue;
+      out+=A.line([[x-3,y],[x-5,y-6],[x,y],[x+3,y-8],[x+4,y]],p.leafDark,.9,{opacity:.5});
+      if(i%3===0)out+=A.circle(x+3,y-8,2.3,p.flowers)+A.circle(x+3,y-8,.6,p.stoneLight);
+    }
+    out+=E('g',{'data-ground-snow':'true',opacity:0},
+      A.path('M0 269 Q270 190 440 245 Q772 120 1021 228 L1280 213 V699 Q1096 667 966 737 Q858 797 692 765 Q420 774 262 647 Q131 685 0 545Z','#edf1e2',{opacity:.7}));
+    return out;
+  }
+  function props(style) {
+    const p=A.palettes[style], items=[];
+    function add(x,y,markup,kind){items.push({depth:P(x,y)[1],markup:G('translate('+P(x,y).join(' ')+')',markup),kind:kind||'prop'});}
+    // A working well, stacked stone, and a wheelbarrow.
+    let well=A.ellipse(0,0,24,11,p.stoneShade,{stroke:p.ink,'stroke-width':1});
+    well+=E('rect',{x:-24,y:-16,width:48,height:16,fill:p.stoneShade});
+    well+=A.ellipse(0,-16,24,11,p.stoneLight,{stroke:p.ink,'stroke-width':1.5})+A.ellipse(0,-16,16,6,p.woodDark);
+    well+=A.line([[-23,-5],[-23,-63]],p.woodDark,4)+A.line([[23,-5],[23,-63]],p.woodDark,4);
+    well+=A.polygon([[-34,-59],[0,-82],[35,-59],[0,-47]],p.roof,p.ink,1.3);
+    well+=A.line([[0,-52],[0,-19]],p.woodDark,1);
+    add(7.0,8.8,well);
+    let stones='';
+    for(let row=0;row<3;row++)for(let col=0;col<4-row;col++)stones+=E('rect',{x:col*19+row*5-32,y:-row*9-11,width:18,height:10,rx:style==='storybook'?2:1,fill:row%2?p.stoneLight:p.stone,stroke:p.stoneShade,'stroke-width':1.1});
+    add(13,9.6,stones);
+    let timber='';
+    for(let row=0;row<3;row++)for(let col=0;col<3-row;col++){
+      timber+=A.polygon([[col*10-31,-row*8],[col*10+26,-row*8-22],[col*10+32,-row*8-17],[col*10-24,-row*8+6]],p.wood,p.woodDark,.8);
+      timber+=A.circle(col*10-27,-row*8+2,4,p.stoneShade,{stroke:p.woodDark,'stroke-width':.7});
+    }
+    add(12.7,11.1,timber);
+    let barrow=A.polygon([[-18,-14],[13,-23],[25,-12],[-6,-3]],p.wood,p.woodDark,1.5);
+    barrow+=A.circle(20,0,8,p.woodDark,{stroke:p.ink,'stroke-width':1.3})+A.circle(20,0,3,p.path)+A.line([[-12,-5],[-30,5]],p.woodDark,3);
+    add(11.7,8.9,barrow);
+    add(4.0,11.7,A.ellipse(0,0,12,5,p.woodDark)+E('rect',{x:-12,y:-22,width:24,height:22,rx:5,fill:p.wood,stroke:p.woodDark,'stroke-width':1})+A.ellipse(0,-22,12,5,p.wood)+A.line([[-11,-15],[11,-15]],p.woodDark,2)+A.line([[-11,-5],[11,-5]],p.woodDark,2));
+    // Footbridge over the foreground stream.
+    let bridge='';
+    for(let i=0;i<16;i++)bridge+=A.polygon([[-35+i*4,-32+i*5],[2+i*4,-43+i*5],[6+i*4,-38+i*5],[-31+i*4,-27+i*5]],p.wood,p.woodDark,.6);
+    bridge+=A.line([[-35,-43],[25,33]],p.woodDark,3)+A.line([[5,-55],[66,20]],p.woodDark,3);
+    [-35,5].forEach(function(x){bridge+=A.line([[x,-43],[x,-24]],p.woodDark,3);});
+    add(18.8,15.8,bridge);
+    [[5.1,6.9],[7.4,6.9],[4.5,11.5],[11.3,7.15]].forEach(function(v){
+      add(v[0],v[1],A.line([[0,0],[0,-28]],p.woodDark,2)+E('rect',{x:-4,y:-25,width:8,height:11,rx:1,fill:p.accent,stroke:p.ink,'stroke-width':1})+A.line([[-4,-28],[4,-28]],p.ink,2));
+    });
+    return items;
+  }
+  function Scene(container,style) {
+    this.style=style;this.palette=A.palettes[style];this.prefix=style+'-';this.lastStage=-1;this.lastStress=false;this.lastSort=-1;
+    this.container=container;this.items=[];this.actors=[];this.trees=[];
+    container.innerHTML='<span class="scene-label">'+this.palette.name+'</span>'+E('svg',{xmlns:'http://www.w3.org/2000/svg',viewBox:'0 0 1280 850',role:'img','aria-label':this.palette.name+': an animated woodland abbey with a chapel, construction site, garden and twelve brothers.'},'');
+    this.svg=container.querySelector('svg');
+    this.build();
+  }
+  Scene.prototype.build=function(){
+    const style=this.style,p=this.palette;
+    this.svg.innerHTML=A.defs(style,this.prefix)+
+      E('title',{},p.name+' — Abbey, Candlelight')+
+      E('desc',{},'An original SVG visual study. Use the adjacent controls to change light, weather, construction and the communal routine.')+
+      E('g',{'data-camera':'true'},E('g',{'data-ground':'true'},ground(style))+E('g',{'data-stress-ground':'true'})+E('g',{'data-depth':'true'}))+
+      E('rect',{'data-dusk':'true',width:1280,height:850,fill:'#eaad65',opacity:0,'pointer-events':'none'})+
+      E('rect',{'data-dark':'true',width:1280,height:850,fill:'#142d49',opacity:0,'pointer-events':'none'})+
+      E('g',{'data-light-camera':'true','pointer-events':'none'},E('g',{'data-lights':'true'})+E('g',{'data-selection-overlay':'true'},A.ellipse(0,0,15,7,'none',{stroke:'#304836','stroke-width':4})+A.ellipse(0,0,15,7,'none',{stroke:'#ffe7a1','stroke-width':2})))+
+      E('g',{'data-weather':'true','pointer-events':'none'})+
+      E('g',{'data-border':'true','pointer-events':'none'},style==='manuscript'?E('rect',{x:14,y:14,width:1252,height:822,rx:5,fill:'none',stroke:p.accent,'stroke-width':3})+E('rect',{x:21,y:21,width:1238,height:808,fill:'none',stroke:p.ink,'stroke-width':.8}):'');
+    this.camera=this.svg.querySelector('[data-camera]');
+    this.lightCamera=this.svg.querySelector('[data-light-camera]');
+    this.selectionOverlay=this.svg.querySelector('[data-selection-overlay]');
+    this.depth=this.svg.querySelector('[data-depth]');
+    this.dark=this.svg.querySelector('[data-dark]');
+    this.dusk=this.svg.querySelector('[data-dusk]');
+    this.weather=this.svg.querySelector('[data-weather]');
+    this.items=[];this.actors=[];this.trees=[];
+    const buildings=[
+      {x:4.2,y:3.4,w:4,d:3.2,h:86,r:45,kind:'chapel'},
+      {x:10,y:4,w:3,d:3,h:74,r:34,kind:'construction'},
+      {x:3,y:9,w:3,d:2.3,h:60,r:28,kind:'kitchen'}
+    ];
+    buildings.forEach(function(b){
+      const node=this.addItem(P(b.x+b.w/2,b.y+b.d)[1],A.building(style,b.x,b.y,b.w,b.d,b.h,b.r,b.kind,2));
+      if(b.kind==='construction'){this.construction=node;this.constructionSpec=b;}
+      if(b.kind==='chapel')this.bell=node.querySelector('[data-bell]');
+    },this);
+    props(style).forEach(function(item){this.addItem(item.depth,item.markup);},this);
+    const positions=[
+      [0,1,1.1],[2,0,1.1],[4,.1,1.15],[6,0,.95],[8,.2,1.15],[10,.4,1],[12,.7,1.1],[14,1.1,1.15],[16,2,1.1],
+      [.4,3,1.05],[.6,5,1.1],[1.1,7,.95],[.4,9,1.1],[1.3,11,1.05],[1.6,13,1.05],
+      [17.6,4,1.1],[18,6,1.0],[18.3,8,.92],[18.1,10,.9],[17.5,12,.95],
+      [3,15,1.0],[5,16,.9],[7.4,16.3,.82],[13,17.3,.95],[15.5,17.2,1.0],
+      [2.4,2,1.1],[12.8,2.5,.9],[1.5,5.6,.8],[15.4,5,.9],[2,14,.8],[16.1,9.8,.7]
+    ];
+    const treeRandom=A.seeded(4531);
+    positions.forEach(function(v,index){
+      const pos=P(v[0]+(treeRandom()-.5)*.7,v[1]+(treeRandom()-.5)*.7);
+      const use=E('use',{href:'#'+this.prefix+'tree'+(index%4===0?1:0)});
+      const snow=A.path('M-39 -103 Q-16 -140 13 -128 Q40 -125 44 -95 Q28 -105 19 -111 Q4 -107 -6 -114 Q-24 -108 -39 -103Z','#f1f4e8',{'data-tree-snow':'true',opacity:0});
+      const node=this.addItem(pos[1],G('translate('+pos.join(' ')+') scale('+v[2]+')',G('',use+snow,{'data-sway':'true'})));
+      this.trees.push({node:node.querySelector('[data-sway]'),phase:index*.73,x:pos[0],y:pos[1],scale:v[2]});
+    },this);
+    // Thin foreground reeds.
+    for(let index=0;index<12;index++){
+      const x=65+index*103,y=680+Math.sin(index)*70;
+      this.addItem(y,G('translate('+x+' '+y+')',A.line([[-5,0],[-10,-23]],p.leafDark,2)+A.line([[0,0],[2,-29]],p.leafDark,2)+A.line([[4,0],[11,-16]],p.leafDark,2)));
+    }
+    this.lights=this.svg.querySelector('[data-lights]');
+    const lightLocations=[[5.1,6.9],[7.4,6.9],[4.5,11.5],[11.3,7.15]];
+    this.lights.innerHTML=lightLocations.map(function(v){const pos=P(v[0],v[1],18);return A.ellipse(pos[0],pos[1]+18,58,26,'url(#'+style+'-glow)')+A.circle(pos[0],pos[1],23,'url(#'+style+'-glow)');}).join('');
+    this.lights.setAttribute('opacity',0);
+    const smokeAt=P(5.15,9.4,96);
+    this.smoke=this.addItem(P(6,11.3)[1]+1,'');
+    this.smoke.innerHTML=[0,1,2,3,4].map(function(i){return A.circle(smokeAt[0],smokeAt[1]-i*8,5+i*1.5,'#eeeadd',{opacity:.45,'data-smoke':i});}).join('');
+    this.smokeOrigin=smokeAt;this.smokeNodes=Array.from(this.smoke.querySelectorAll('[data-smoke]'));
+    this.createActors(12);
+    this.createWeather();
+    this.cacheSurfaces();
+  };
+  Scene.prototype.addItem=function(depth,markup){
+    const node=document.createElementNS('http://www.w3.org/2000/svg','g');
+    node.innerHTML=markup;this.depth.appendChild(node);this.items.push({node:node,depth:depth});return node;
+  };
+  Scene.prototype.createActors=function(count){
+    this.actors.forEach(function(actor){actor.node.remove();});
+    this.actors=[];
+    for(let index=0;index<count;index++){
+      const node=document.createElementNS('http://www.w3.org/2000/svg','g');
+      node.setAttribute('data-monk',index%12);node.style.cursor='pointer';
+      node.innerHTML=E('title',{},A.brothers[index%12].name)+
+        A.ellipse(0,0,15,7,'none',{stroke:'#ffdc6b','stroke-width':2.5,'data-selection':'true',opacity:0})+
+        G('',A.monk(this.style,index),{'data-body':'true'})+
+        E('rect',{x:-20,y:-48,width:40,height:53,fill:'transparent'});
+      this.depth.appendChild(node);
+      this.actors.push({node:node,index:index,depth:0,body:node.querySelector('[data-body]'),leftLeg:node.querySelector('[data-leg=left]'),rightLeg:node.querySelector('[data-leg=right]'),leftArm:node.querySelector('[data-arm=left]'),rightArm:node.querySelector('[data-arm=right]'),load:node.querySelector('[data-load]'),selection:node.querySelector('[data-selection]')});
+    }
+  };
+  Scene.prototype.createWeather=function(){
+    const r=A.seeded(7721);let rain='',snow='',fog='';
+    this.particles=[];
+    for(let i=0;i<90;i++){
+      const particle={x:r()*1360,y:r()*900,rate:.7+r()*.6,drift:r()*6};this.particles.push(particle);
+      rain+=A.line([[0,0],[-6,17]],'#deebe6',1.5,{opacity:.7,'data-rain':i});
+      snow+=A.circle(0,0,1.4+r()*1.8,'#fffef5',{opacity:.8,'data-flake':i});
+    }
+    for(let i=0;i<6;i++)fog+=A.ellipse(230+i*190,310+i%3*170,360,85,'url(#'+this.prefix+'soft-fog)',{opacity:.35,'data-fog':i});
+    this.weather.innerHTML=E('g',{'data-rain-layer':'true',opacity:0},E('rect',{width:1280,height:850,fill:'#496a79',opacity:.13})+rain)+E('g',{'data-snow-layer':'true',opacity:0},snow)+E('g',{'data-fog-layer':'true',opacity:0},E('rect',{width:1280,height:850,fill:'url(#'+this.prefix+'mist)',opacity:.38})+fog);
+    this.rain=this.weather.querySelector('[data-rain-layer]');this.snow=this.weather.querySelector('[data-snow-layer]');this.fog=this.weather.querySelector('[data-fog-layer]');
+    this.rainNodes=Array.from(this.weather.querySelectorAll('[data-rain]'));this.snowNodes=Array.from(this.weather.querySelectorAll('[data-flake]'));this.fogNodes=Array.from(this.weather.querySelectorAll('[data-fog]'));
+  };
+  Scene.prototype.cacheSurfaces=function(){
+    this.snowSurfaces=Array.from(this.svg.querySelectorAll('[data-snow],[data-tree-snow],[data-ground-snow]'));
+    this.windows=Array.from(this.svg.querySelectorAll('[data-window]'));
+  };
+  Scene.prototype.setStress=function(enabled){
+    this.lastStress=enabled;this.createActors(enabled?200:12);
+    let groundMarkup='';
+    if(enabled){
+      const r=A.seeded(1402);
+      for(let x=0;x<32;x++)for(let y=0;y<32;y++)groundMarkup+=A.tile(x*.55,y*.55,.54,.54,this.palette.grassLight,'',0).replace('<polygon ','<polygon opacity=".08" ');
+      for(let i=0;i<300;i++){const pos=P(r()*18,r()*18);groundMarkup+=A.ellipse(pos[0],pos[1],2+r()*5,1+r()*3,this.palette.stoneShade,{opacity:.5});}
+    }
+    this.svg.querySelector('[data-stress-ground]').innerHTML=groundMarkup;
+  };
+  Scene.prototype.update=function(state){
+    if(this.container.hidden)return;
+    const time=state.elapsed, staticMotion=state.reduced;
+    if(state.stress!==this.lastStress)this.setStress(state.stress);
+    if(state.stage!==this.lastStage){
+      const b=this.constructionSpec;
+      this.construction.innerHTML=A.building(this.style,b.x,b.y,b.w,b.d,b.h,b.r,b.kind,state.stage);
+      this.lastStage=state.stage;this.cacheSurfaces();
+    }
+    const transform='translate('+state.panX+' '+state.panY+') translate(640 450) scale('+state.zoom+') translate(-640 -450)';
+    this.camera.setAttribute('transform',transform);this.lightCamera.setAttribute('transform',transform);
+    const light=lighting(state.hour);
+    this.dark.setAttribute('opacity',light.darkness.toFixed(3));this.dusk.setAttribute('opacity',(light.dusk*.12).toFixed(3));
+    this.lights.setAttribute('opacity',(light.darkness*1.8).toFixed(3));
+    this.windows.forEach(function(node){node.setAttribute('fill',light.darkness>.25?'#ffda87':'#d7bb7d');});
+    const snowy=state.weather==='snow';
+    this.snowSurfaces.forEach(function(node){node.setAttribute('opacity',snowy?1:0);});
+    this.rain.setAttribute('opacity',state.weather==='rain'?1:0);this.snow.setAttribute('opacity',snowy?1:0);this.fog.setAttribute('opacity',state.weather==='fog'?1:0);
+    this.actors.forEach(function(actor){
+      const i=actor.index;
+      let pose=i<12?servicePosition(i,state):routePosition(i,state.workTime);
+      if(i>=12)pose.position=[1.5+(i%16)*.93,1.7+Math.floor(i/16)*1.05];
+      const pos=P(pose.position[0],pose.position[1]),moving=pose.moving&&!staticMotion;
+      actor.depth=pos[1];
+      actor.node.setAttribute('transform','translate('+pos[0].toFixed(2)+' '+pos[1].toFixed(2)+')');
+      const stride=moving?Math.sin(time*7.8+i)*22:0;
+      actor.leftLeg.setAttribute('transform','rotate('+stride.toFixed(1)+' -5 -8)');actor.rightLeg.setAttribute('transform','rotate('+(-stride).toFixed(1)+' 5 -8)');
+      const working=!pose.moving&&state.serviceTime===null&&!staticMotion;
+      const arm=working?Math.sin(time*3.3+i)*15:stride*.7;
+      actor.leftArm.setAttribute('transform','rotate('+arm.toFixed(1)+' -6 -25)');actor.rightArm.setAttribute('transform','rotate('+(-arm).toFixed(1)+' 6 -25)');
+      actor.body.setAttribute('transform',pose.gathered?'translate(0 3) scale(1 .91)':'translate(0 0)');
+      actor.load.setAttribute('opacity',state.serviceTime===null&&(i%3===0||i===2)?1:0);
+      actor.selection.setAttribute('opacity',i===state.selected?1:0);
+    });
+    if(Math.floor(time*7)!==this.lastSort||state.forceSort){
+      this.lastSort=Math.floor(time*7);
+      this.items.concat(this.actors).sort(function(a,b){return a.depth-b.depth;}).forEach(function(item){this.depth.appendChild(item.node);},this);
+    }
+    const selectedPose=servicePosition(state.selected,state),selectedPoint=P(selectedPose.position[0],selectedPose.position[1]);
+    this.selectionOverlay.setAttribute('transform','translate('+selectedPoint.join(' ')+')');
+    this.trees.forEach(function(tree){
+      tree.node.setAttribute('transform','rotate('+((staticMotion?0:Math.sin(time*.62+tree.phase)*.75)).toFixed(2)+' 0 -10)');
+      const obscures=tree.y>selectedPoint[1]&&Math.abs(tree.x-selectedPoint[0])<56*tree.scale&&selectedPoint[1]>tree.y-150*tree.scale&&selectedPoint[1]<tree.y-20*tree.scale;
+      tree.node.setAttribute('opacity',obscures?.28:1);
+    });
+    this.smokeNodes.forEach(function(node,i){
+      const progress=((staticMotion?i*.21:time*.1+i*.21)%1);
+      node.setAttribute('cx',this.smokeOrigin[0]+Math.sin(progress*3)*15);
+      node.setAttribute('cy',this.smokeOrigin[1]-progress*49);
+      node.setAttribute('r',4+progress*10);node.setAttribute('opacity',(1-progress)*.48);
+    },this);
+    if(this.bell){
+      const ringing=state.serviceTime!==null&&state.serviceTime<8&&!staticMotion;
+      this.bell.setAttribute('transform','translate(0 -20) rotate('+(ringing?Math.sin(time*8)*20:0)+')');
+    }
+    if(state.weather==='rain'||snowy){
+      this.particles.forEach(function(p,i){
+        const t=staticMotion?0:time;
+        if(snowy){
+          this.snowNodes[i].setAttribute('cx',((p.x+Math.sin(t*.55+i)*15-t*p.drift)+1400)%1400-60);
+          this.snowNodes[i].setAttribute('cy',(p.y+t*24*p.rate)%920-35);
+        }else{
+          const y=(p.y+t*460*p.rate)%940-40,x=((p.x-t*110*p.rate)%1400+1400)%1400-60;
+          this.rainNodes[i].setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+')');
+        }
+      },this);
+    }
+    if(state.weather==='fog')this.fogNodes.forEach(function(node,i){node.setAttribute('transform','translate('+(staticMotion?0:Math.sin(time*.075+i)*90)+' 0)');});
+    this.svg.setAttribute('data-weather',state.weather);this.svg.setAttribute('data-stage',state.stage);
+  };
+  root.AbbeyScene={Scene:Scene,routePosition:routePosition,servicePosition:servicePosition,lighting:lighting};
+})(globalThis);
+
+</script>
+  <script>
+(function() {
+  'use strict';
+  const A=window.AbbeyArt, S=window.AbbeyScene;
+  const byId=function(id){return document.getElementById(id);};
+  const state={style:'orchard',weather:'clear',hour:14,stage:2,elapsed:0,workTime:0,serviceTime:null,speed:1,paused:false,reduced:window.matchMedia('(prefers-reduced-motion: reduce)').matches,cycleDay:false,cycleBuild:false,zoom:1,panX:0,panY:0,selected:0,compare:false,stress:false,forceSort:true};
+  const scenes={}, sceneRoot=byId('scenes');
+  const frameIntervals=[];
+  let lastTimestamp=null, lastReadout=0, noticeTimer=null, modalWasPaused=false;
+  Object.keys(A.palettes).forEach(function(style){
+    const container=document.createElement('div');
+    container.className='scene-slot';container.dataset.style=style;container.hidden=style!==state.style;
+    sceneRoot.appendChild(container);scenes[style]=new S.Scene(container,style);
+  });
+  A.brothers.forEach(function(b,index){
+    const option=document.createElement('option');option.value=index;option.textContent=b.name;byId('person').appendChild(option);
+  });
+  function notify(message) {
+    const node=byId('notice');node.textContent=message;node.classList.add('show');
+    clearTimeout(noticeTimer);noticeTimer=setTimeout(function(){node.classList.remove('show');},3500);
+  }
+  function personReadout() {
+    const person=A.brothers[state.selected];
+    byId('person').value=state.selected;
+    byId('person-name').textContent=person.name;
+    byId('person-description').textContent=person.role+' · '+person.traits;
+    byId('person-thought').textContent=state.serviceTime!==null?'The bell has called him to the chapel.':person.thought;
+    byId('person-description').title=person.action+' '+person.reason;
+    byId('portrait').innerHTML=A.portrait(state.style,state.selected);
+  }
+  function selectStyle(style) {
+    if(!A.palettes[style])return;
+    state.style=style;state.forceSort=true;frameIntervals.length=0;
+    document.querySelectorAll('[data-style].style-choice').forEach(function(button){
+      const active=button.dataset.style===style;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+    });
+    Object.keys(scenes).forEach(function(key){scenes[key].container.hidden=!state.compare&&key!==style;});
+    byId('scene-caption').textContent=state.compare?'One clearing · Three art directions':A.palettes[style].name;
+    byId('style-description').textContent=A.palettes[style].description;
+    personReadout();render();
+  }
+  function setCompare(enabled) {
+    state.compare=enabled;document.body.classList.toggle('comparing',enabled);
+    byId('compare').setAttribute('aria-pressed',String(enabled));
+    byId('compare').textContent=enabled?'Return to single study':'Compare all three';
+    selectStyle(state.style);
+  }
+  function hourDescription(hour) {
+    if(hour<5||hour>=21)return'Night';
+    if(hour<8)return'Dawn';
+    if(hour>=17)return'Dusk';
+    return'Day';
+  }
+  function readout() {
+    const hours=Math.floor(state.hour)%24,minutes=Math.floor((state.hour%1)*60);
+    byId('hour-value').textContent=String(hours).padStart(2,'0')+':'+String(minutes).padStart(2,'0')+' · '+hourDescription(state.hour);
+    byId('hour').value=state.hour;
+    document.querySelectorAll('[data-hour]').forEach(function(button){button.classList.toggle('active',hourDescription(Number(button.dataset.hour))===hourDescription(state.hour));});
+    byId('construction').value=state.stage;byId('construction-value').textContent=A.stageNames[state.stage];
+    const service=state.serviceTime;
+    byId('routine-caption').textContent=service===null?'An afternoon of work':service<12?'The bell calls them together':service<24?'Vespers · A quiet observance':'Returning to the work of the house';
+    byId('vespers').disabled=service!==null;
+    byId('vespers').textContent=service===null?'Call the brothers to Vespers':service<12?'Gathering at the chapel…':service<24?'A moment of quiet…':'Returning to work…';
+    byId('pause').textContent=state.paused?'Resume':'Pause';byId('pause').setAttribute('aria-pressed',String(state.paused));
+    byId('zoom-value').textContent=Math.round(state.zoom*100)+'%';
+    byId('zoom-out').disabled=state.zoom<=.7;byId('zoom-in').disabled=state.zoom>=1.8;
+  }
+  function render() {Object.values(scenes).forEach(function(scene){scene.update(state);});state.forceSort=false;}
+  function advance(seconds) {
+    if(state.paused||state.reduced)return;
+    const delta=seconds*state.speed;
+    state.elapsed+=delta;
+    if(state.serviceTime!==null){
+      state.serviceTime+=delta;
+      if(state.serviceTime>=36){state.workTime+=state.serviceTime-36;state.serviceTime=null;personReadout();}
+    }else state.workTime+=delta;
+    if(state.cycleDay)state.hour=(state.hour+delta/6)%24;
+    if(state.cycleBuild)state.stage=Math.floor(state.elapsed/5)%6;
+  }
+  function frame(timestamp) {
+    if(lastTimestamp!==null&&!document.hidden){
+      const interval=timestamp-lastTimestamp;
+      if(interval>0&&interval<1000){frameIntervals.push(interval);if(frameIntervals.length>240)frameIntervals.shift();}
+      advance(Math.min(.08,interval/1000));
+    }
+    lastTimestamp=timestamp;
+    render();
+    if(timestamp-lastReadout>200){
+      readout();lastReadout=timestamp;
+      if(byId('timing-details').open&&frameIntervals.length>30){
+        const sorted=frameIntervals.slice().sort(function(a,b){return a-b;});
+        const mean=frameIntervals.reduce(function(a,b){return a+b;},0)/frameIntervals.length;
+        const p95=sorted[Math.floor(sorted.length*.95)];
+        byId('timing').textContent=(1000/mean).toFixed(1)+' frames/s · '+mean.toFixed(1)+' ms mean · '+p95.toFixed(1)+' ms p95. '+(state.stress?'200 figures, 1,024 test tiles and 300 test props':'12 figures')+' per visible study.';
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange',function(){lastTimestamp=null;frameIntervals.length=0;});
+  document.querySelectorAll('button[data-style]').forEach(function(button){button.addEventListener('click',function(){selectStyle(button.dataset.style);});});
+  byId('compare').addEventListener('click',function(){setCompare(!state.compare);});
+  byId('pause').addEventListener('click',function(){state.paused=!state.paused;readout();});
+  byId('hour').addEventListener('input',function(event){state.hour=Number(event.target.value);state.cycleDay=false;byId('cycle-day').checked=false;readout();render();});
+  document.querySelectorAll('[data-hour]').forEach(function(button){button.addEventListener('click',function(){state.hour=Number(button.dataset.hour);state.cycleDay=false;byId('cycle-day').checked=false;readout();render();});});
+  byId('cycle-day').addEventListener('change',function(event){state.cycleDay=event.target.checked;});
+  byId('weather').addEventListener('change',function(event){state.weather=event.target.value;render();});
+  byId('construction').addEventListener('input',function(event){state.stage=Number(event.target.value);state.cycleBuild=false;byId('build-cycle').checked=false;readout();render();});
+  byId('build-cycle').addEventListener('change',function(event){state.cycleBuild=event.target.checked;});
+  byId('speed').addEventListener('change',function(event){state.speed=Number(event.target.value);});
+  byId('reduced-motion').checked=state.reduced;
+  byId('reduced-motion').addEventListener('change',function(event){state.reduced=event.target.checked;render();});
+  byId('stress').addEventListener('change',function(event){state.stress=event.target.checked;state.forceSort=true;frameIntervals.length=0;render();});
+  byId('vespers').addEventListener('click',function(){
+    state.serviceTime=0;state.paused=false;readout();personReadout();
+    if(state.reduced)notify('The bell is called. Turn off the still-scene setting to watch the procession.');
+  });
+  byId('person').addEventListener('change',function(event){state.selected=Number(event.target.value);personReadout();render();});
+  function zoomTo(value) {state.zoom=Math.max(.7,Math.min(1.8,Math.round(value*100)/100));readout();render();}
+  byId('zoom-in').addEventListener('click',function(){zoomTo(state.zoom+.1);});
+  byId('zoom-out').addEventListener('click',function(){zoomTo(state.zoom-.1);});
+  byId('reset-view').addEventListener('click',function(){state.panX=0;state.panY=0;zoomTo(1);});
+  Object.values(scenes).forEach(function(scene){
+    let drag=null,suppressClick=false;
+    function position(event){return new DOMPoint(event.clientX,event.clientY).matrixTransform(scene.svg.getScreenCTM().inverse());}
+    scene.svg.addEventListener('pointerdown',function(event){
+      if(event.button!==0)return;
+      const point=position(event);drag={x:point.x,y:point.y,panX:state.panX,panY:state.panY,actor:event.target.closest('[data-monk]')};
+      suppressClick=false;scene.svg.setPointerCapture(event.pointerId);
+    });
+    scene.svg.addEventListener('pointermove',function(event){
+      if(!drag)return;const point=position(event),dx=point.x-drag.x,dy=point.y-drag.y;
+      if(Math.abs(dx)+Math.abs(dy)>5)suppressClick=true;
+      if(suppressClick){state.panX=Math.max(-350,Math.min(350,drag.panX+dx));state.panY=Math.max(-240,Math.min(240,drag.panY+dy));render();}
+    });
+    scene.svg.addEventListener('pointerup',function(event){
+      if(!drag)return;
+      const actor=drag.actor;drag=null;
+      if(scene.svg.hasPointerCapture(event.pointerId))scene.svg.releasePointerCapture(event.pointerId);
+      if(!suppressClick&&actor){state.selected=Number(actor.dataset.monk);selectStyle(scene.style);personReadout();render();}
+    });
+    scene.svg.addEventListener('pointercancel',function(){drag=null;suppressClick=true;});
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.target.closest('input,select,button,textarea,summary')||byId('event-dialog').open)return;
+    if(event.code==='Space'){event.preventDefault();state.paused=!state.paused;readout();}
+    const movements={ArrowLeft:[25,0],ArrowRight:[-25,0],ArrowUp:[0,25],ArrowDown:[0,-25]};
+    if(movements[event.key]){
+      event.preventDefault();state.panX=Math.max(-350,Math.min(350,state.panX+movements[event.key][0]));state.panY=Math.max(-240,Math.min(240,state.panY+movements[event.key][1]));render();
+    }
+  });
+  byId('restart').addEventListener('click',function(){
+    state.elapsed=0;state.workTime=0;state.serviceTime=null;state.forceSort=true;state.panX=0;state.panY=0;state.zoom=1;
+    state.paused=false;readout();personReadout();render();notify('The clearing begins again. Your art, light, and weather choices are kept.');
+  });
+  byId('open-event').addEventListener('click',function(){
+    modalWasPaused=state.paused;state.paused=true;byId('event-art').innerHTML=A.eventArt(state.style);byId('event-response').textContent='';
+    byId('event-dialog').showModal();readout();
+  });
+  byId('close-event').addEventListener('click',function(){byId('event-dialog').close();});
+  byId('event-dialog').addEventListener('close',function(){state.paused=modalWasPaused;readout();});
+  const responses={
+    shelter:'Martin goes to find a ladder. Thomas rolls up the plans carefully. The wall will still be there tomorrow.',
+    church:'Oswin sets aside the chapel beams. Martin turns to find a dry corner in the refectory for the guests.',
+    trade:'Agnes listens, then names the price. Anselm asks Oswin to bring the accounts before they promise more.'
+  };
+  document.querySelectorAll('[data-choice]').forEach(function(button){button.addEventListener('click',function(){byId('event-response').textContent=responses[button.dataset.choice];});});
+  byId('save-frame').addEventListener('click',function(){
+    render();const scene=scenes[state.style], clone=scene.svg.cloneNode(true);
+    clone.setAttribute('width',1280);clone.setAttribute('height',850);
+    const svg='<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(clone);
+    const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));
+    const link=document.createElement('a');link.href=url;link.download='Abbey-'+state.style+'-'+state.weather+'-'+hourDescription(state.hour).toLowerCase()+'.svg';
+    document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},3000);
+    notify('Saved an editable SVG of the selected art direction.');
+  });
+  // A bounded inspection interface for deterministic capture and browser verification.
+  window.AbbeyStudy={
+    version:'0.0.1',state:state,scenes:scenes,
+    render:function(){state.forceSort=true;readout();render();personReadout();},
+    advance:function(seconds){advance(seconds);state.forceSort=true;readout();render();},
+    selectStyle:selectStyle,
+    metrics:function(){const sorted=frameIntervals.slice().sort(function(a,b){return a-b;});return {samples:sorted.length,meanMs:sorted.length?sorted.reduce(function(a,b){return a+b;},0)/sorted.length:null,p95Ms:sorted.length?sorted[Math.floor(sorted.length*.95)]:null,viewport:[innerWidth,innerHeight],userAgent:navigator.userAgent,visibleStudies:state.compare?3:1,figuresPerStudy:state.stress?200:12};}
+  };
+  selectStyle(state.style);readout();requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>

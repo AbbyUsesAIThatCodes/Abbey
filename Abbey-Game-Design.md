@@ -1,9 +1,9 @@
 # Abbey
 ## Founding game design
 
-**Document revision:** 0.1  
+**Document revision:** 0.2  
 **Date:** 13 September 2026  
-**Status:** Design proposal for discussion; no game or visual prototype has been implemented.  
+**Status:** Founding direction accepted. Candlelight 0.0.1 implements the three animated visual studies; the settlement simulation and native feasibility test remain next stages. See README.md and docs/Art-Study-Notes.md for the implementation and verification limits.  
 **Working title:** Abbey  
 **Creative premise:** Grow a small woodland religious house into a flourishing community around a monumental church, while the people who build it live, work, worship, disagree, age, and leave their mark.
 
@@ -551,7 +551,7 @@ Snow and fog belong in the visual studies first. Their agricultural, transport, 
 
 Do not turn the art studies into a city-builder before choosing their style. Do not implement the full cathedral or political system merely because the document describes its eventual possibility.
 
-This first repository contribution is documentation only. No release tag, executable, approved engine selection, measured performance result, or completed art study is implied.
+The founding repository contribution was documentation only. Candlelight 0.0.1 now supplies the three browser-targeted visual studies as an offline HTML preview. Their SVG output and logic have been checked; live browser layout, interaction, and performance verification remain outstanding because the environment blocked local-file browser navigation. No native executable, approved engine selection, or measured performance result is implied.
 
 ## 16. Risks that should shape the work
 

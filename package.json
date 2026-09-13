@@ -1,0 +1,15 @@
+{
+  "name": "abbey-candlelight",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Offline SVG art studies for Abbey",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node --test scripts/study.test.cjs",
+    "capture": "node scripts/capture.cjs"
+  },
+  "devDependencies": {
+    "xml-js": "1.6.11",
+    "sharp": "0.35.4"
+  }
+}
