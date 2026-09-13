@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Abbey · Candlelight art studies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">✣</span><div><h1>Abbey</h1><p>A small beginning. A lasting place.</p></div></div>
+    <div class="edition"><span>CANDLELIGHT</span><p>Animated art studies · 0.0.1</p></div>
+    <button id="compare" class="button secondary" aria-pressed="false">Compare all three</button>
+  </header>
+  <main>
+    <div class="study-heading"><div><span class="eyebrow">A CLEARING IN THE WOODS</span><h2>Three ways to see our abbey.</h2></div><p>Let the day pass. Watch the brothers gather.<br>Find the world you want to spend time in.</p></div>
+    <nav class="styles" aria-label="Art direction">
+      <button class="style-choice active" data-style="orchard" aria-pressed="true"><span class="style-number">01</span><span><strong>Orchard Cloister</strong><small>Warm stone & rounded greenery</small></span><span class="swatches orchard" aria-hidden="true"><i></i><i></i><i></i></span></button>
+      <button class="style-choice" data-style="manuscript" aria-pressed="false"><span class="style-number">02</span><span><strong>Living Manuscript</strong><small>Jewel tones & illustrated margins</small></span><span class="swatches manuscript" aria-hidden="true"><i></i><i></i><i></i></span></button>
+      <button class="style-choice" data-style="storybook" aria-pressed="false"><span class="style-number">03</span><span><strong>Sunlit Storybook</strong><small>Soft shapes & a gentler light</small></span><span class="swatches storybook" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    </nav>
+    <div class="workspace">
+      <section class="world-panel" aria-label="Animated abbey clearing">
+        <div class="world-toolbar"><span id="scene-caption">Orchard Cloister</span><span id="routine-caption">An afternoon of work</span><button id="pause" class="button small" aria-pressed="false">Pause</button></div>
+        <div id="scenes" class="scenes"></div>
+        <div class="world-footer"><span>Drag to explore · Select a brother to meet him</span><div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="reset-view">Center</button></div></div>
+      </section>
+      <aside class="controls" aria-label="Study controls">
+        <section class="control-section"><h3>The passing day</h3><div class="label-row"><label for="hour">Light</label><output id="hour-value">14:00 · Day</output></div><input id="hour" type="range" min="0" max="24" step="0.1" value="14"><div class="segmented" aria-label="Light presets"><button data-hour="6">Dawn</button><button data-hour="14">Day</button><button data-hour="19">Dusk</button><button data-hour="23">Night</button></div><label class="check"><input id="cycle-day" type="checkbox">Let the light change</label></section>
+        <section class="control-section"><label class="section-label" for="weather">Through the seasons</label><select id="weather"><option value="clear">Clear skies</option><option value="rain">A passing rain</option><option value="fog">Morning mist</option><option value="snow">Winter snowfall</option></select></section>
+        <section class="control-section"><h3>A church taking shape</h3><div class="label-row"><label for="construction">Construction</label><output id="construction-value">Walls & piers</output></div><input id="construction" type="range" min="0" max="5" value="2"><div class="range-labels"><span>Survey</span><span>Complete</span></div><label class="check"><input id="build-cycle" type="checkbox">Watch it being built</label></section>
+        <section class="control-section"><h3>The life of the house</h3><button id="vespers" class="button primary wide">Call the brothers to Vespers</button><p class="control-hint">They gather at the chapel, keep a quiet observance, then return to work.</p><div class="label-row"><label for="speed">Animation pace</label><select id="speed"><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div><label class="check"><input id="reduced-motion" type="checkbox">Still scene / reduced motion</label></section>
+      </aside>
+    </div>
+    <div class="below-world">
+      <section class="person-card" aria-label="Meet a brother"><div id="portrait" class="portrait" aria-hidden="true"></div><div class="person-info"><div class="label-row"><label for="person" class="eyebrow">MEET A BROTHER</label><select id="person" aria-label="Choose a brother"></select></div><h3 id="person-name">Brother Thomas</h3><p id="person-description"></p><p class="person-thought" id="person-thought"></p></div></section>
+      <section class="story-card"><span class="eyebrow">A STORY IN THE MAKING</span><h3>The last dry timber</h3><p>A roof to mend. A church to raise.<br>Two promises, and one stack of timber.</p><button id="open-event" class="text-button">Open the illustrated event <span aria-hidden="true">↗</span></button></section>
+      <section class="review-card"><span class="eyebrow">TAKE A CLOSER LOOK</span><p id="style-description"></p><div class="review-actions"><button id="save-frame" class="button secondary small">Save this frame</button><button id="restart" class="text-button">Restart scene</button></div><details id="timing-details"><summary>Frame timing</summary><p id="timing">Collecting visible frame intervals…</p><label class="check"><input id="stress" type="checkbox">200-figure stress scene</label><p class="control-hint">Timing describes this browser and device; it is not a native-game benchmark.</p></details></section>
+    </div>
+    <footer class="page-footer"><span>Abbey · Candlelight 0.0.1</span><span>A visual study with scripted routines. The settlement simulation comes next.</span></footer>
+  </main>
+  <dialog id="event-dialog" aria-labelledby="event-title"><button id="close-event" class="dialog-close" aria-label="Close event">×</button><div id="event-art"></div><div class="event-copy"><span class="eyebrow">A QUESTION FOR THE CHAPTER</span><h2 id="event-title">The last dry timber</h2><p>Rain beads on the guesthouse rafters. Oswin has counted the dry beams twice. Thomas waits beside the chapel plans.</p><blockquote>“The church can wait a little,” says Martin. “Our guests are wet tonight.”</blockquote><p class="event-note">An illustration and layout study. These choices show narrative tone; they do not change an economy yet.</p><div id="event-choices"><button data-choice="shelter">Shelter the guests first.<small>The chapel work can resume when the next timber arrives.</small></button><button data-choice="church">Keep the timber for the church.<small>Close the wet guest beds and explain the delay to Martin.</small></button><button data-choice="trade">Ask Agnes about another load.<small>See what a second promise would cost.</small></button></div><p id="event-response" aria-live="polite"></p></div></dialog>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <script src="art.js"></script>
+  <script src="scene.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
