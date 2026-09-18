@@ -1,10 +1,10 @@
 # Abbey
 ## Founding game design
 
-**Document revision:** 0.1  
-**Date:** 13 September 2026  
-**Status:** Design proposal for discussion; no game or visual prototype has been implemented.  
-**Working title:** Abbey  
+**Document revision:** 0.2
+**Date:** 18 September 2026
+**Status:** Long-term design with an implemented 0.0.2 native feasibility prototype. See README.md for current scope; most systems described below remain future work.
+**Working title:** Abbey
 **Creative premise:** Grow a small woodland religious house into a flourishing community around a monumental church, while the people who build it live, work, worship, disagree, age, and leave their mark.
 
 > The bell calls the brothers to Vespers. Beyond the chapel, rain darkens the unfinished stonework. The cellarer counts the grain. A mason studies the arch he hopes will outlive him. Somewhere in the cloister, an old disagreement has become a new friendship.
@@ -35,9 +35,9 @@ These are design influences. Abbey needs its own setting, characters, writing, i
 
 **Requested foundations:** woodland abbey to grand church and surrounding community; individually simulated monks with stats, skills, and traits; monastic daily life adapted for play; short days and compressed seasons; illustrated character events; bright, somewhat cartoonish SVG art; document first, several narrow animated art studies second, playable prototype third.
 
-**Proposed defaults:** a fictional English valley influenced by the twelfth and thirteenth centuries; a Benedictine-inspired community; fixed isometric presentation; twelve-minute days; twenty-four-day seasons; an institution-level player role; three art-study candidates; a small first playable focused on one stone chapel bay.
+**Proposed defaults:** a fictional English valley influenced by the twelfth and thirteenth centuries; a Benedictine-inspired community; fixed isometric presentation; fifteen-minute days (twelve daytime, three night); twenty-four-day seasons; an institution-level player role; three art-study candidates; a small first playable focused on one stone chapel bay.
 
-**Still open:** final title, exact date and customs, preferred art direction, final rendering stack, long-campaign time compression, and whether cathedral status becomes an implemented campaign route. Proposed defaults let development proceed; they are not claims of decisions already made by the owner.
+**Still open:** final title, exact date and customs, preferred art direction, long-campaign time compression, and whether cathedral status becomes an implemented campaign route. Proposed defaults let development proceed; they are not claims of decisions already made by the owner.
 
 ## 2. Five design pillars
 
@@ -117,8 +117,8 @@ Campaign goals may include completing and dedicating a chosen church plan, survi
 
 | Setting | Proposed default |
 | --- | --- |
-| Full visible day at normal speed | 12 real minutes |
-| Typical daylight / darkness | About 9 / 3 real minutes, with seasonal variation |
+| Full visible day at normal speed | 15 real minutes |
+| Typical daylight / darkness | About 12 / 3 real minutes, with seasonal variation |
 | Season | 24 representative days; keep 20- and 30-day alternatives configurable |
 | Year | Four seasons, or 96 representative days |
 | Controls | Pause, 1×, 2×, 4×; faster simulation considered only after profiling |
@@ -126,7 +126,7 @@ Campaign goals may include completing and dedicating a chosen church plan, survi
 
 These are representative game days, not a literal medieval calendar. Feast days, agricultural timing, aging, and historical dates must be mapped deliberately rather than assuming ninety-six real days constitute a historical year.
 
-The arithmetic matters: one game year takes **19.2 hours at 1×**, or **4.8 hours at uninterrupted 4×**, before pauses. A fifty-year project would still take 240 hours at uninterrupted 4×. Short days alone do not solve generational pacing.
+The arithmetic matters: one game year takes **24 hours at 1×**, or **6 hours at uninterrupted 4×**, before pauses. A fifty-year project would still take 300 hours at uninterrupted 4×. Short days alone do not solve generational pacing.
 
 For the first playable, use continuous short seasons and no aging system. For the full game, prototype **optional chronicle interludes** between stable campaign chapters: the player may advance a proposed one to three years through a summarized simulation, then return to detailed daily life.
 
@@ -149,7 +149,7 @@ The following is a **gameplay arrangement**, not a historical timetable:
 | Evening | Vespers, supper where appropriate, conversation or reading | A strong visual and emotional daily anchor |
 | Nightfall | Compline and quiet | Resolve the day and restore energy |
 
-In the prototype, fully stage **one morning gathering, Vespers, a shared meal, work, and sleep**. The other observances can appear as schedule entries and modest transitions until their animation is warranted. Label this as a reduced routine.
+The 0.0.2 prototype schedules all eight offices and visible travel to prayer, a shared meal, work and sleep. Rich processions, chapter, Mass, individual exceptions and seasonal timings remain future work. Its exact compressed timetable is recorded in docs/Architecture.md.
 
 Travel time matters. Schedule jobs in blocks, allow work to be left safely, and use grace windows for gatherings. A brother should not spend the day walking repeatedly between a distant field and the chapel without accomplishing anything.
 
@@ -232,7 +232,7 @@ A useful starting tension is already present: Thomas wants to advance the church
 
 ### Population and performance
 
-The first playable has six monks and two named lay workers. Later, all monks and important recurring townspeople remain individually detailed. Larger civilian populations can use household or workplace simulation, with representative activity on the map. We should not promise Dwarf Fortress-level detail for thousands of townspeople before measuring cost.
+The first playable has six monks and two named lay workers. Later, all monks and important recurring townspeople remain individually detailed. Larger civilian populations may use simpler household and workplace decisions, while preserving persistent people and observable actions. The 0.0.2 stress scenes retain an individual record for every resident; they do not yet model households. We should not promise Dwarf Fortress-level detail for thousands of townspeople before measuring cost.
 
 Novices, training, retirement, death, and succession belong after the daily character loop works. The institution continues when an individual dies.
 
@@ -452,17 +452,15 @@ Trust is central: show who has reserved materials, why a task is blocked, why a 
 
 ## 13. Technical direction
 
-### Recommended approach, not yet an engine commitment
+### Selected native feasibility approach
 
-Use a small local browser harness for the SVG visual studies because it makes art, weather, and animation easy to inspect. This harness contains scripted scenes, not a second implementation of the economy.
+The approved direction is **a portable C++20 simulation core with Godot presentation through GDExtension**. Version 0.0.2, Living Foundations, implements that boundary, a native isometric desktop client, three floor views, basic scheduled residents, saves and population benchmarks. It uses pinned Godot 4.4.1 tools. See [current architecture and limitations](docs/Architecture.md) and [measured validation](docs/Validation.md).
 
-For the eventual persistent simulation, the recommended candidate is **C++20 with SDL3 presentation**, subject to the art/import/performance study. Its benefits are control over long-running simulation, clear save ownership, and a desktop application that can run locally. Its costs include a more deliberate UI, asset, build, and packaging pipeline.
+The browser art-study branch remains a separate visual experiment. SDL3 remains a possible future client because the simulation and save format do not depend on Godot. Replacing the presentation would still require substantial UI, renderer, input and packaging work. No engine choice by itself guarantees the eventual town's performance.
 
-A native feasibility test should import the selected SVG assets, render the shared study scene, and exercise interaction before substantial game code is written. SDL3 does not itself provide a complete SVG authoring or scene system. We must select and validate an importer or a rasterization/export step.
+SVG remains an authoring format. The current client imports SVG textures and draws procedural isometric building geometry. Supported zoom levels must be visually tested; this is not an infinite-resolution runtime SVG renderer.
 
-Prefer SVG as source with cached textures or atlases at tested resolutions for runtime use if that meets quality and zoom needs. Keep rendering decisions separate from simulation data. Do not promise infinite sharpness from a single raster export.
-
-If the native workflow proves too costly for iteration, reconsider the client before building the simulation twice. Final implementation choice remains open until the feasibility gate.
+Measure the native core, bridge and rendered client separately as actual systems are added. Current population tests are simplified, without collision, physical hauling, workstation queues or full social simulation, and must not be advertised as finished-game population limits.
 
 ### Simulation boundaries
 
@@ -505,7 +503,7 @@ Is it enjoyable to understand a small community, organize its day, resolve a per
 | Persistence | Save/load and rotating local backups |
 | Session target | A satisfying 45–90-minute scenario at mixed speeds, with continuation afterward |
 
-Begin with enough supplies to avoid an immediate irreversible shortage, a mature patch available for harvest, and a dependable initial trader visit. A new crop does not grow to maturity in a single twelve-minute day. Lay specialists have clear wages and duties. Assignments and construction choices should create pressure gradually.
+Begin with enough supplies to avoid an immediate irreversible shortage, a mature patch available for harvest, and a dependable initial trader visit. A new crop does not grow to maturity in a single fifteen-minute day. Lay specialists have clear wages and duties. Assignments and construction choices should create pressure gradually.
 
 The playable scenario uses a shortened, explicitly labeled scenario calendar as needed; it does not claim to cover a full normal twenty-four-day season within an hour. Reaching the first completed bay is the scenario milestone. Exact starting quantities and labor rates are tuning work.
 
@@ -593,7 +591,7 @@ Questions to resolve through discussion and prototypes:
 | Is becoming a cathedral essential? | Great abbey church first; cathedral status a possible later institutional story | Clarify the desired campaign fantasy and research governance |
 | How much personal detail remains enjoyable? | Deep monks, selected recurring lay characters, household-level civilians later | Observe inspection and attachment in the first playable |
 | How do decades pass? | Continuous daily life plus optional, accountable chapter interludes later | Measure pacing and build a separate interlude experiment |
-| Which runtime should ship? | C++20 / SDL3 candidate; SVG authored and exported through a tested pipeline | Complete the native feasibility gate |
+| Which runtime should ship? | C++20 simulation + Godot GDExtension desktop presentation for 0.0.2 | Re-profile with hauling, reservations and changing topology |
 | How severe should setbacks be? | Recoverable hardship by default, with transparent consequences | Playtest the first wet spell and supply dispute |
 
 ## 18. The experience to protect

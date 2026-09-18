@@ -1,0 +1,11 @@
+/build*/
+/deps/
+/dist/
+/.cache/
+/godot/.godot/
+/godot/bin/*
+!/godot/bin/.gitkeep
+*.uid
+*.tmp
+/godot/export_presets.cfg
+__pycache__/
