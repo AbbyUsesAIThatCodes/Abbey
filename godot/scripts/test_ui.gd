@@ -27,6 +27,14 @@ func run() -> void:
 	check(game.people.floor_level==1,"Upper-floor visibility")
 	game.set_floor(0)
 	check(initial==game.sim.digest(),"Changing floors changed simulation state")
+	game.follow_button.grab_focus()
+	var pause_key:=InputEventKey.new()
+	pause_key.physical_keycode=KEY_SPACE
+	pause_key.keycode=KEY_SPACE
+	pause_key.pressed=true
+	root.push_input(pause_key)
+	check(not game.paused and not game.following,"Space must pause even when a button has focus")
+	game.paused=true
 	game.select_person(3)
 	check(game.name_label.text=="Brother Thomas","Person selection")
 	game.duty_picker.item_selected.emit(0)

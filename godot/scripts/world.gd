@@ -103,10 +103,11 @@ func _draw() -> void:
 		var p:=iso(20+fmod(i,3)*0.3,12+float(i/3)*0.25)
 		draw_line(p,p+Vector2(35,-16),Color("88613b"),7)
 		draw_circle(p,3.5,Color("c9a875"))
-	caption("Saint Anselm’s",16,4)
-	caption("Kitchen · Dormitory",10,22.6)
-	caption("Market green",27,23.8)
-	caption("Kitchen garden",8,13.8)
+	if floor_level==0:
+		caption("Saint Anselm’s",16,4)
+		caption("Kitchen · Dormitory",10,22.6)
+		caption("Market green",27,23.8)
+		caption("Kitchen garden",8,13.8)
 	if floor_level != 0:
 		caption("Upper rooms" if floor_level==1 else "Cellar",11,17,Color("f5d589"))
 
@@ -206,7 +207,7 @@ func construction() -> void:
 			draw_line(p,p-Vector2(0,h+20),Color("8a653f"),4)
 			draw_line(p-Vector2(10,h),p+Vector2(12,-h+11),Color("ba905b"),3)
 		if bay_work>=600:roof(21,6,5,7,80,Color("877462"))
-	caption("The next chapel bay",24,14)
+	if floor_level==0:caption("The next chapel bay",24,14)
 
 func refresh() -> void:
 	queue_redraw()

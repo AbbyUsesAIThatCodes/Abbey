@@ -407,6 +407,20 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not event.pressed:
 		if event.button_index==MOUSE_BUTTON_MIDDLE or event.button_index==MOUSE_BUTTON_RIGHT:dragging=false
 
+	if sim==null:return
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.physical_keycode:
+			KEY_SPACE:toggle_pause()
+			KEY_F5:save_manual()
+			KEY_F9:load_manual()
+			KEY_F11:toggle_fullscreen()
+			KEY_ESCAPE:paused=true;refresh_ui();feedback("Paused. Use Quit to close Abbey; F11 switches to a window.")
+			KEY_PAGEUP:set_floor(mini(1,floor_level+1))
+			KEY_PAGEDOWN:set_floor(maxi(-1,floor_level-1))
+
+			_:return
+		get_viewport().set_input_as_handled()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if sim==null:return
 	if event is InputEventMouseButton:
@@ -421,15 +435,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				if hit>=0:select_person(hit)
 	elif event is InputEventMouseMotion and dragging:
 		camera.position-=event.relative/camera.zoom.x
-	elif event is InputEventKey and event.pressed and not event.echo:
-		match event.physical_keycode:
-			KEY_SPACE:toggle_pause()
-			KEY_F5:save_manual()
-			KEY_F9:load_manual()
-			KEY_F11:toggle_fullscreen()
-			KEY_ESCAPE:paused=true;refresh_ui();feedback("Paused. Use Quit to close Abbey; F11 switches to a window.")
-			KEY_PAGEUP:set_floor(mini(1,floor_level+1))
-			KEY_PAGEDOWN:set_floor(maxi(-1,floor_level-1))
 
 func _notification(what: int) -> void:
 	if what==NOTIFICATION_WM_CLOSE_REQUEST:request_quit()
@@ -444,6 +449,7 @@ func set_floor(value: int, focus: bool=true) -> void:
 	roofs.queue_redraw()
 	people.set_people(sim.positions())
 	floor_picker.select(value+1)
+	roof_button.disabled=value!=0
 	if focus and value!=0:
 		camera.position=WorldView.iso(11,19,value)
 		camera.zoom=Vector2(1.55,1.55)
